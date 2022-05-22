@@ -24,10 +24,34 @@
         "minimumQuantity" : "900"
     },
     {
-        "img" : "https://cdn.shopify.com/s/files/1/0266/4166/2049/products/6.png?v=1571308282",
+        "img" : "https://templatemonster.vecuro.com/html/wheely/demo/assets/img/shop/shop-1-2.jpg",
         "pname" : "Legend series",
         "description" : "Blue 5 HOLE 15″ RIMS ",
         "price" : "2500",
+        "qunatity" : "",
+        "minimumQuantity" : "900"
+    },
+    {
+        "img" : "https://templatemonster.vecuro.com/html/wheely/demo/assets/img/shop/shop-1-5.jpg",
+        "pname" : "Legend series",
+        "description" : "Blue 5 HOLE 15″ RIMS ",
+        "price" : "1800",
+        "qunatity" : "",
+        "minimumQuantity" : "900"
+    },
+    {
+        "img" : "https://templatemonster.vecuro.com/html/wheely/demo/assets/img/shop/shop-1-9.jpg",
+        "pname" : "Legend series",
+        "description" : "Blue 5 HOLE 15″ RIMS ",
+        "price" : "200",
+        "qunatity" : "",
+        "minimumQuantity" : "900"
+    },
+    {
+        "img" : "https://templatemonster.vecuro.com/html/wheely/demo/assets/img/shop/shop-1-5.jpg",
+        "pname" : "Legend series",
+        "description" : "Blue 5 HOLE 15″ RIMS ",
+        "price" : "1900",
         "qunatity" : "",
         "minimumQuantity" : "900"
     }

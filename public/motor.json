@@ -22,5 +22,13 @@
         "price" : "100",
         "qunatity" : "",
         "minimumQuantity" : "2000"
+    },
+    {
+        "img" : "https://cdn.shopify.com/s/files/1/0610/6287/3301/files/linked-banner3_180x.png?v=1638505491",
+        "pname" : "DRS Helmet Flat Black",
+        "description" : "Flat black BMX helmet from Australian brand DRS. DRS Helmets are an affordable quality Australian Standards Approved BMX helmet.These feature great style and perfect fit. Each helmet comes with 2 x sets of pads.",
+        "price" : "130",
+        "qunatity" : "",
+        "minimumQuantity" : "15000"
     }
 ]

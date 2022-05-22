@@ -2,17 +2,20 @@ import React from 'react';
 
 
 
-const Tirerimcard = ({tirerim}) => {
+const Tirerimcard = ({ tirerim }) => {
 
     return (
         <div>
-            <div class="text-primary-content">
+            <div>
+                <div class="text-primary-content">
                     <div className='mt-5'>
                         <p> <span className='text-2xl font-extrabold text-[#FD2F30] text-left' >$</span> <span className='text-2xl font-extrabold text-[#FD2F30]'>{tirerim.price}</span> <span className='text-[#FD2F30]' > (1000 prices) </span> </p>
-                        <img src={tirerim.img} alt="" />                   
+                        <img src={tirerim.img} alt="" />
                     </div>
                 </div>
+            </div> 
         </div>
+        
     );
 };
 
