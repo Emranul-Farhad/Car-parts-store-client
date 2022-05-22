@@ -1,0 +1,26 @@
+[
+    {
+        "img" : "https://demo74leotheme.b-cdn.net/prestashop/leo_mtdanstore_demo/70-home_default/customizable-mug.jpg",
+        "pname" : "BMX GRADA",
+        "description" : "Presented in youth sizing for the first time, the Fox Youth Rampage Helmet offers full face coverage to young park, BMX, downhill and enduro riders. It features a lightweight injection-molded ABS shell inspired by our iconic Rampage Pro Carbon Helmet. Injected mesh vent screens maintain superior ventilation while keeping the track grit from going down your gob. Not that you'll be behing hey champ!  The fully adjustable visor and proven D–ring closure system adds big-mountain function to this essential style.",
+        "price" : "100",
+        "qunatity" : "",
+        "minimumQuantity" : "2000"
+    },
+    {
+        "img" : "https://demo74leotheme.b-cdn.net/prestashop/leo_mtdanstore_demo/79-home_default/customizable-mug.jpg",
+        "pname" : "Aircraft Downhill",
+        "description" : "The Aircraft is precision engineered with a Carbon/Kevlar Composite shell providing an exceptionally strong, yet ultra-lightweight design. 25 enhanced venting channels create the Active Cooling System; specifically designed to manage air flow and ventilate the entire helmet. The AIRCRAFT CARBON also features the MIPS Brain Protection System; a helmet-integrated, low-friction layer designed to reduce rotational motion transferred to the brain from angled impacts to the head.",
+        "price" : "170",
+        "qunatity" : "",
+        "minimumQuantity" : "2000"
+    },
+    {
+        "img" : "https://demo74leotheme.b-cdn.net/prestashop/leo_mtdanstore_demo/76-home_default/customizable-mug.jpg",
+        "pname" : "DRS Helmet Flat Black",
+        "description" : "Flat black BMX helmet from Australian brand DRS. DRS Helmets are an affordable quality Australian Standards Approved BMX helmet.These feature great style and perfect fit. Each helmet comes with 2 x sets of pads.",
+        "price" : "100",
+        "qunatity" : "",
+        "minimumQuantity" : "2000"
+    }
+]
