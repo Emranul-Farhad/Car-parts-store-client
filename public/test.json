@@ -1,0 +1,74 @@
+[
+    {
+        "img" : "https://themebing.com/wp/sayara/wp-content/uploads/2020/04/Repair-Parts-400x400.jpg",
+        "pname" : "6 Speed Gearbox",
+        "description" : "6 Speed Gearbox A direct-shift gearbox, commonly abbreviated to DSG automatic gearbox, is an electronically controlled dual-clutch multiple-shaft manual gearbox in a transaxle design, without a conventional clutch pedal and with fully automatic or semi-manual control. In simple terms, a DSG is two separate manual gearboxes (and clutches) contained within one housing and working as one unit. By using two independent clutches, a DSG automatic gearbox can achieve faster shift times and eliminates the torque converter of a conventional epicyclic automatic transmission.",
+        "price" : "6444",
+        "qunatity" : "",
+        "minimumQuantity" : "100"
+    },
+    {
+        "img" : "https://themebing.com/wp/sayara/wp-content/uploads/2020/04/prod_2_deposit_opt-400x400.jpg",
+        "pname" : "Air Intake Pump",
+        "description" : "The air then passes through the engine air filter, usually located in an “air box.” Pure “air” is a mixture of gases – 78% nitrogen, 21% oxygen, and trace amounts of other gases. Depending on location and season, air can also contain numerous contaminants, such as soot, pollen, dust, dirt, leaves, and insects. Some of these contaminants can be abrasive, causing excessive wear in engine parts, while others can clog the system.",
+        "price" : "360.00",
+        "qunatity" : "",
+        "minimumQuantity" : "1500"
+    },
+    {
+        "img" : "https://themebing.com/wp/sayara/wp-content/uploads/2020/05/cat-4.jpg",
+        "pname" : "600 series Floor mount",
+        "description" : "",
+        "price" : "4000",
+        "qunatity" : "",
+        "minimumQuantity" : "1000"
+    },
+    {
+        "img" : "https://themebing.com/wp/sayara/wp-content/uploads/2020/05/cat-1.jpg",
+        "pname" : "Star While",
+        "description" : "",
+        "price" : "5600",
+        "qunatity" : "",
+        "minimumQuantity" : "900"
+    },
+    {
+        "img" : "https://demo74leotheme.b-cdn.net/prestashop/leo_mtdanstore_demo/70-home_default/customizable-mug.jpg",
+        "pname" : "Helmet Arsenal",
+        "description" : "",
+        "price" : "275",
+        "qunatity" : "",
+        "minimumQuantity" : "1000"
+    },
+    {
+        "img" : "https://demo74leotheme.b-cdn.net/prestashop/leo_mtdanstore_demo/76-home_default/customizable-mug.jpg",
+        "pname" : "Aircraft 2 Helmet",
+        "description" : "",
+        "price" : "180",
+        "qunatity" : "",
+        "minimumQuantity" : "2000"
+    },
+    {
+        "img" : "https://demo74leotheme.b-cdn.net/prestashop/leo_mt…o/109-home_default/brown-bear-vector-graphics.jpg",
+        "pname" : "BMX GRADA",
+        "description" : "",
+        "price" : "100",
+        "qunatity" : "",
+        "minimumQuantity" : "2000"
+    },
+    {
+        "img" : "https://demo74leotheme.b-cdn.net/prestashop/leo_mtdanstore_demo/79-home_default/customizable-mug.jpg",
+        "pname" : "Aircraft Downhill",
+        "description" : "",
+        "price" : "170",
+        "qunatity" : "",
+        "minimumQuantity" : "2000"
+    },
+    {
+        "img" : "https://demo74leotheme.b-cdn.net/prestashop/leo_mt…tore_demo/124-home_default/brown-bear-cushion.jpg",
+        "pname" : "Flexible Free",
+        "description" : "",
+        "price" : "100",
+        "qunatity" : "",
+        "minimumQuantity" : "2000"
+    }
+]
