@@ -33,7 +33,7 @@ export default function Hero() {
     const AutoplaySlider = withAutoplay(AwesomeSlider);
 
     return (
-        <div>
+        <div className="mt-[75px] ">
             <AutoplaySlider
                 className="herro"
                 animation="openAnimation"
