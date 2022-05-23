@@ -4,6 +4,7 @@ import Delivery from '../../Components/HomepageComponents/DeliverySystem/Deliver
 import Hero from '../../Components/HomepageComponents/Hero';
 import Motorshow from '../../Components/HomepageComponents/MotorbikeShowcase/Motorshow';
 import Offerbanner from '../../Components/HomepageComponents/Offerbanner/Offerbanner';
+import Products from '../../Components/HomepageComponents/Products/Products';
 import Tirerim from '../../Components/HomepageComponents/Tireshowcase/Tirerim';
 import Timercount from '../../Components/Timercount';
 
@@ -39,6 +40,10 @@ const Home = () => {
             </div>
             <div className='mt-[130px]' >
                 <Brandwiseshops></Brandwiseshops>
+            </div>
+            {/* products show all*/}
+            <div>
+                <Products></Products>
             </div>
         </div>
     );
