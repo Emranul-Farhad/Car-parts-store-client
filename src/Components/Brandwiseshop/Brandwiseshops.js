@@ -22,7 +22,7 @@ const Brandwiseshops = () => {
         <div>
             <div>
                 <h1 className='text-[#333333] text-[35px] font-serif font-bold'> CHOOSE PARTS BY BRAND </h1>
-                <p> WE MANUFECTURE ALL PARTS </p>
+                <p className='text-[#E81938] font-extrabold'> WE MANUFECTURE ALL PARTS </p>
             </div>
 
            <div className=' mt-20 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 shadow-2xl rounded-lg '>

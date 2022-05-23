@@ -42,7 +42,7 @@ const Home = () => {
                 <Brandwiseshops></Brandwiseshops>
             </div>
             {/* products show all*/}
-            <div>
+            <div className='mt-[120px]'>
                 <Products></Products>
             </div>
         </div>

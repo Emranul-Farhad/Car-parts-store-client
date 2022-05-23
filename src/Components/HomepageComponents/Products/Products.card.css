@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
 
 :root {
   --color: #3c3163;
@@ -10,22 +10,13 @@
 }
 
 
+
 a {
   color: inherit;
-} */
+}
 
-/* .cardds-wrapper {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
-  padding: 4rem;
-  margin: 0 auto;
-  width: max-content;
-} */
 
-/* .cardd {
+.cardd {
   font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
   background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
@@ -36,7 +27,7 @@ a {
   border-radius: 1em;
   padding: 1em;
   /*margin: 2em;*/
-  /* display: flex;
+  display: flex;
   align-items: flex-end;
   background-size: cover;
   background-position: center;
@@ -46,13 +37,13 @@ a {
   overflow: hidden;
   border: 10px solid #ccc;
   text-decoration: none;
-} */
+}
 
-/* .cardd:hover {
+.cardd:hover {
   transform: rotate(0);
-} */
+}
 
-/* .cardd h1 {
+.cardd h1 {
   margin: 0;
   font-size: 1.5em;
   line-height: 1.2em;
@@ -67,9 +58,9 @@ a {
 
 .cardd .tags {
   display: flex;
-}  */
+}
 
-/* .cardd .tags .tag {
+.cardd .tags .tag {
   font-size: 0.75em;
   background: rgba(255,255,255,0.5);
   border-radius: 0.3rem;
@@ -148,5 +139,5 @@ a {
 .info h1 {
   font-size: 1em;
   font-weight: normal;
-} */
+}
 
