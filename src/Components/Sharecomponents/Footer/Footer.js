@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.css'
-
+import {BsFacebook} from 'react-icons/bs'
+import {FaTwitter} from 'react-icons/fa'
+import {AiFillLinkedin} from 'react-icons/ai'
 
 const Footer = () => {
 
@@ -14,11 +16,11 @@ const Footer = () => {
                         <div class="row">
                             <div class="col-lg-3 col-md-6">
                                 <div class="f_widget company_widget wow fadeInLeft commonstyle" data-wow-delay="0.2s" >
-                                    <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+                                    <h3 class="f-title f_600 t_color f_size_18 uppercase font-extrabold">Get in Touch</h3>
                                     <p>Don’t miss any updates of our new templates and extensions.!</p>
                                     <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
                                         <input type="text" name="EMAIL" class="form-control memail" placeholder="Email"/>
-                                            <button class="btn btn_get bg-[#FC5A34]" type="submit">Subscribe</button>
+                                            <button class="btn btn_get bg-[#FC5A34] text-white" type="submit">Subscribe</button>
                                             <p class="mchimp-errmessage" style={{display: "none"}}> </p>
                                             <p class="mchimp-sucmessage" style={{display: "none"}}> </p>
                                     </form>
@@ -26,38 +28,36 @@ const Footer = () => {
                             </div>
                             <div class="col-lg-3 col-md-6">
                             <div class="f_widget about-widget pl_70 wow fadeInLeft commonstyle" data-wow-delay="0.4s">
-                                    <h3 class="f-title f_600 t_color f_size_18">Download</h3>
+                                    <h3 class="f-title f_600 f_size_18 font-extrabold ">PRODUCTS</h3>
                                     <ul class="list-unstyled f_list">
-                                        <li><a href="#">Company</a></li>
-                                        <li><a href="#">Android App</a></li>
-                                        <li><a href="#">ios App</a></li>
-                                        <li><a href="#">Desktop</a></li>
-                                        <li><a href="#">Projects</a></li>
-                                        <li><a href="#">My tasks</a></li>
+                                        <li><a className='font-bold uppercase text-[#FC5A34]  
+                                        hover:text-[#e03f1a]' href="/">Rim</a></li>                                  
+                                        <li><a className='font-bold uppercase text-[#FC5A34]' href="#">Tire</a></li>
+                                        <li><a className='font-bold uppercase text-[#FC5A34]' href="#">Gear</a></li>
+                                        <li><a className='font-bold uppercase text-[#FC5A34]' href="#">Mirror</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="f_widget about-widget pl_70 wow fadeInLeft commonstyle" data-wow-delay="0.6s">
-                                    <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                                    <h3 class="f-title f_600 t_color f_size_18 font-extrabold uppercase">Help</h3>
                                     <ul class="list-unstyled f_list">
-                                        <li><a href="#">FAQ</a></li>
-                                        <li><a href="#">Term &amp; conditions</a></li>
-                                        <li><a href="#">Reporting</a></li>
-                                        <li><a href="#">Documentation</a></li>
-                                        <li><a href="#">Support Policy</a></li>
-                                        <li><a href="#">Privacy</a></li>
+                                        <li><a  className='font-bold uppercase' href="#">FAQ</a></li>
+                                        <li><a  className='font-bold uppercase' href="#">Term &amp; conditions</a></li>
+                                        <li><a  className='font-bold uppercase' href="#">Reporting</a></li>
+                                        <li><a  className='font-bold uppercase' href="#">Documentation</a></li>
+                                        <li><a  className='font-bold uppercase' href="#">Support Policy</a></li>
+                                        <li><a  className='font-bold uppercase' href="#">Privacy</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="f_widget social-widget pl_70 wow fadeInLeft commonstyle" data-wow-delay="0.8s">
-                                    <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                                    <h3 class="f-title f_600 t_color f_size_18 font-extrabold uppercase">Team Solutions</h3>
                                     <div class="f_social_icon">
-                                        <a href="#" class="fab fa-facebook"></a>
-                                        <a href="#" class="fab fa-twitter"></a>
-                                        <a href="#" class="fab fa-linkedin"></a>
-                                        <a href="#" class="fab fa-pinterest"></a>
+                                        <a href="#" class="fab fa-facebook"> <AiFillLinkedin className='mt-2 w-10'></AiFillLinkedin> </a>
+                                        <a href="#" class="fab fa-twitter"> <FaTwitter className='mt-2 w-10' ></FaTwitter> </a>
+                                        <a href="#" class="fab fa-linkedin"> <BsFacebook className='mt-2 w-10'></BsFacebook> </a>
                                     </div>
                                 </div>
                             </div>
