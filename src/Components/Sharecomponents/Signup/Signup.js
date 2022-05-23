@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useLocation } from 'react-router-dom';
-
+import { NavLink, useLocation } from 'react-router-dom';
+import {FcGoogle} from 'react-icons/fc'
 
 
 
@@ -63,7 +63,19 @@ const Signup = () => {
                                 </h2>
                                 <p className="mt-2 text-sm text-gray-500 ">Please sign up to  your account</p>
                             </div>
+                            {/*  */}
+                            <div className="flex flex-row justify-center items-center space-x-3">
 
+
+<button
+    className="w-11 h-11 items-center justify-center inline-flex rounded-2xl font-bold text-lg  text-white bg-white shadow-lg cursor-pointer transition ease-in duration-300"
+    rel="noreferrer"
+>
+    <FcGoogle></FcGoogle>
+
+</button>
+
+</div>
                             {/* hh */}
                             <div className="flex items-center justify-center space-x-2">
                                 <span className="h-px w-16 bg-gray-200"></span>
@@ -191,33 +203,17 @@ const Signup = () => {
                                 </div>
                                 {/* confirm password  end here*/}
                                 <div className="flex items-center justify-between mt-5">
-                                    <div className="flex items-center">
-                                        <input id="remember_me" name="remember_me" type="checkbox"
-                                            className="h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded" />
-                                        <label for="remember_me" className="ml-2 block text-sm text-gray-900">
-                                            Remember me
-                                        </label>
-                                    </div>
-                                    <div className="text-sm">
-                                        <a href="#" className="text-indigo-400 hover:text-blue-500">
-                                            Forgot your password?
-                                        </a>
-                                    </div>
+                                    
                                 </div>
                                 <div>
-                                    {/* <butto type="submit"
-                                        className="w-full flex justify-center bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938] text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
-                                        Sign in
-                                    </butto> */}
+                                    
                                     <input
                                     className='w-96 mx-2 className="w-full flex justify-center bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"'
                                     type="submit"  />
                                 </div>
                                 <p className="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
-                                    <span>Don't have an account?</span>
-                                    <a href="/"
-                                        className="text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign
-                                        up</a>
+                                    <span>Already have an account?</span>
+                                        <NavLink to='/login'  className="font-bold text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300"> LOGIN </NavLink>
                                 </p>
                             </form>
                         </div>

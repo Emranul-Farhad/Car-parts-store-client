@@ -1,11 +1,19 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
-
+import { FcGoogle } from 'react-icons/fc'
 
 
 
 const Login = () => {
 
+    // react hook form
+    const { register, formState: { errors }, handleSubmit } = useForm();
+
+    //handel submit 
+    const onSubmit = data => {
+        console.log(data)
+    };
 
     return (
         <div>
@@ -52,7 +60,20 @@ const Login = () => {
                                 <h2 className="mt-6 text-3xl font-bold text-gray-900">
                                     Welcom Back!
                                 </h2>
-                                <p className="mt-2 text-sm text-gray-500">Please sign in to your account</p>
+                                <p className="mt-2 text-sm text-slate-500">Please sign in to your account</p>
+                            </div>
+                            {/* dd */}
+                            <div className="flex flex-row justify-center items-center space-x-3">
+
+
+                                <button
+                                    className="w-11 h-11 items-center justify-center inline-flex rounded-2xl font-bold text-lg  text-white bg-white shadow-lg cursor-pointer transition ease-in duration-300"
+                                    rel="noreferrer"
+                                >
+                                    <FcGoogle></FcGoogle>
+
+                                </button>
+
                             </div>
 
                             {/* hh */}
@@ -61,7 +82,7 @@ const Login = () => {
                                 <span className="text-gray-300 font-normal">or continue with</span>
                                 <span className="h-px w-16 bg-gray-200"></span>
                             </div>
-                            <form className="mt-8 space-y-6" action="#" method="POST">
+                            <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6"  >
                                 {/* <input type="hidden" name="remember" placeholder='amder df' value="true" /> */}
                                 <div className="relative">
                                     <div className="absolute right-3 mt-4"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500"
@@ -71,17 +92,53 @@ const Login = () => {
                                     </svg>
                                     </div>
                                     <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
+
                                     <input
+                                        type="email"
+                                        placeholder="Type your Email"
                                         className=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
-                                        type="email" placeholder="abc@gmail.com" />
+                                        {...register("email", {
+                                            required: {
+                                                value: true,
+                                                message: "Email required"
+                                            },
+                                            pattern: {
+                                                value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                                message: 'invalid Email'
+                                            }
+                                        })}
+                                    />
+                                    <label className="label absolute left-3 font-bold mt-0">
+                                        {errors.email?.type === 'pattern' && <span className="label-text-alt text-[red] "> {errors.email.message} </span>}
+                                        {errors.email?.type === 'required' && <span className="label-text-alt text-[red] "> {errors.email.message} </span>}
+                                    </label>
                                 </div>
                                 <div className="mt-8 content-center">
                                     <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">
                                         Password
                                     </label>
-                                    <input
+                                    {/* <input
                                         className="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
-                                        type="" placeholder="Enter your password** "  />
+                                        type="" placeholder="Enter your password** "  /> */}
+                                    <input
+                                        type="password"
+                                        placeholder="Type your Password"
+                                        className="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
+                                        {...register("password", {
+                                            required: {
+                                                value: true,
+                                                message: "Passwod required"
+                                            },
+                                            pattern: {
+                                                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                                                message: 'eight characters one uppercase  lowercase letter one number one special character'
+                                            }
+                                        })}
+                                    />
+                                    <label className="label absolute font-bold mt-0">
+                                        {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-600  "> {errors.password.message} </span>}
+                                        {errors.password?.type === 'required' && <span className="label-text-alt text-[#f00] "> {errors.password.message} </span>}
+                                    </label>
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center">
@@ -98,19 +155,16 @@ const Login = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <butto type="submit"
-                                        className="w-full flex justify-center bg-gradient-to-r from-indigo-500 to-blue-600  hover:bg-gradient-to-l hover:from-blue-500 hover:to-indigo-600 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
-                                        Sign in
-                                    </butto>
-                                    {/* <input
-                                    className='w-96 mx-2 className="w-full flex justify-center bg-gradient-to-r from-indigo-500 to-blue-600  hover:bg-gradient-to-l hover:from-blue-500 hover:to-indigo-600 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"'
-                                    type="submit"  /> */}
+                                    <input
+                                        className='w-96 mx-2 className="w-full flex justify-center bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"'
+                                        type="submit" />
+
                                 </div>
                                 <p className="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
                                     <span>Don't have an account?</span>
                                     <NavLink to='/signup'
                                         className="text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign
-                                      up</NavLink>
+                                        up</NavLink>
                                 </p>
                             </form>
                         </div>
