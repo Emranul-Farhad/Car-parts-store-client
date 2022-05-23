@@ -18,7 +18,7 @@ const Footer = () => {
                                     <p>Don’t miss any updates of our new templates and extensions.!</p>
                                     <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
                                         <input type="text" name="EMAIL" class="form-control memail" placeholder="Email"/>
-                                            <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                                            <button class="btn btn_get bg-[#FC5A34]" type="submit">Subscribe</button>
                                             <p class="mchimp-errmessage" style={{display: "none"}}> </p>
                                             <p class="mchimp-sucmessage" style={{display: "none"}}> </p>
                                     </form>
@@ -37,8 +37,8 @@ const Footer = () => {
                                     </ul>
                                 </div>
                             </div>
-                            {/* <div class="col-lg-3 col-md-6">
-                                <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="f_widget about-widget pl_70 wow fadeInLeft commonstyle" data-wow-delay="0.6s">
                                     <h3 class="f-title f_600 t_color f_size_18">Help</h3>
                                     <ul class="list-unstyled f_list">
                                         <li><a href="#">FAQ</a></li>
@@ -49,9 +49,9 @@ const Footer = () => {
                                         <li><a href="#">Privacy</a></li>
                                     </ul>
                                 </div>
-                            </div> */}
-                            {/* <div class="col-lg-3 col-md-6">
-                                <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="f_widget social-widget pl_70 wow fadeInLeft commonstyle" data-wow-delay="0.8s">
                                     <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
                                     <div class="f_social_icon">
                                         <a href="#" class="fab fa-facebook"></a>
@@ -60,7 +60,7 @@ const Footer = () => {
                                         <a href="#" class="fab fa-pinterest"></a>
                                     </div>
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                     <div class="footer_bg">
