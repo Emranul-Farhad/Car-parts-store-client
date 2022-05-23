@@ -21,12 +21,13 @@ const Tirerim = () => {
         <div>
              <div className='row m-5'>
                 {/* swiper slider */} 
+
               <div className='col-lg-6 col-md-12 col-sm-12'>
               <Swiper
-              className='h-[430px] w-[400px]'
+              className='h-[430px] w-[400px] lg:hidden md:block'
                     modules={[Navigation, Autoplay, Pagination, Scrollbar, Zoom, A11y]}
                     spaceBetween={20}
-                    slidesPerView={2}
+                    slidesPerView={1}
                     centeredslide="true"
                     // navigation
                     key={tirerim.length}
@@ -42,6 +43,30 @@ const Tirerim = () => {
                     }
 
                 </Swiper>
+                {/* md lg divice swiper*/}
+                {/* <div className=''> */}
+                <Swiper
+              className='h-[430px] w-[400px] hidden lg:block'
+                    modules={[Navigation, Autoplay, Pagination, Scrollbar, Zoom, A11y]}
+                    spaceBetween={20}
+                    slidesPerView={3}
+                    centeredslide="true"
+                    // navigation
+                    key={tirerim.length}
+                    autoplay={true}
+                >
+
+                    {
+                        tirerim.map((tirerim, index) => (
+                            <SwiperSlide key={index} >
+                                <Tirerimcard key={index} tirerim={tirerim} ></Tirerimcard>
+                            </SwiperSlide>
+                        ))
+                    }
+
+                </Swiper>
+                {/* </div> */}
+                {/* swiper end */}
               <div className='flex flex-row'>
               <div class="text-primary-content mt-[-150px]">
                     <div className='hidden lg:block'>
@@ -58,7 +83,7 @@ const Tirerim = () => {
                     </div>
                 </div>
               </div>
-             
+             {/* extra show part end */}
               </div>
                {/* products */}
                <div className='col-lg-6 col-md-12 col-sm-12'>

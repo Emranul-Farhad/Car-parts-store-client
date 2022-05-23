@@ -6,8 +6,8 @@ import React from 'react';
 const Offerbanner = () => {
 
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-y-2 md:gap-x-10 lg:gap-x-0 container mx-16'>
-            <div class="card w-96 bg-base-100 shadow-xl image-full">
+        <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 gap-y-2  lg:gap-x-0 container g-4 '>
+            <div class="card w-[100%] bg-base-100 shadow-xl image-full">
                 <figure><img src="https://cdn.shopify.com/s/files/1/0266/4166/2049/files/BANNER_1.png?v=1611831460" alt="Shoes" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">Tire!</h2>
@@ -17,7 +17,7 @@ const Offerbanner = () => {
                     </div>
                 </div>
             </div>
-            <div class="card w-96 bg-base-100 shadow-xl image-full  ">
+            <div class="card w-[100%] bg-base-100 shadow-xl image-full  ">
                 <figure><img src="https://cdn.shopify.com/s/files/1/0266/4166/2049/files/BANNER_2.png?v=1611831488" alt="ligth" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">Gear metter!</h2>
@@ -27,7 +27,7 @@ const Offerbanner = () => {
                     </div>
                 </div>
             </div>
-            <div class="card w-96 bg-base-100 shadow-xl image-full ">
+            <div class="card w-[100%] bg-base-100 shadow-xl image-full ">
                 <figure><img src="https://cdn.shopify.com/s/files/1/0266/4166/2049/files/BANNER_3.png?v=1611831543" alt="Shoes" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">Tire Rim!</h2>

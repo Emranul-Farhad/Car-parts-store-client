@@ -30,5 +30,29 @@
         "price" : "130",
         "qunatity" : "",
         "minimumQuantity" : "15000"
+    },
+    {
+        "img" : "https://www.99bikes.com.au/media/catalog/product/6/6/661-comp-helmet-wht-web.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560",
+        "pname" : "DRS Helmet Flat Black",
+        "description" : "Flat black BMX helmet from Australian brand DRS. DRS Helmets are an affordable quality Australian Standards Approved BMX helmet.These feature great style and perfect fit. Each helmet comes with 2 x sets of pads.",
+        "price" : "280",
+        "qunatity" : "",
+        "minimumQuantity" : "15000"
+    },
+    {
+        "img" : "https://media.nextopia.net/212f89bbd363894fbdf94749b321d605/15d6d7abaea6581a5b4ab936c7268fb2.jpg?wm=0&h=300&w=240&bg=FFFFFF&eh=2&src=https%3A%2F%2Fwww.99bikes.com.au%2Fmedia%2Fcatalog%2Fproduct%2Fh%2Fe%2Fhel7idpproject23gfgrapblk_3.jpeg",
+        "pname" : "DRS Helmet Flat Black",
+        "description" : "Flat black BMX helmet from Australian brand DRS. DRS Helmets are an affordable quality Australian Standards Approved BMX helmet.These feature great style and perfect fit. Each helmet comes with 2 x sets of pads.",
+        "price" : "930",
+        "qunatity" : "",
+        "minimumQuantity" : "15000"
+    },
+    {
+        "img" : "https://media.nextopia.net/212f89bbd363894fbdf94749b321d605/f17ce50299437094794946b9c1806c82.jpg?wm=0&h=300&w=240&bg=FFFFFF&eh=2&src=https%3A%2F%2Fwww.99bikes.com.au%2Fmedia%2Fcatalog%2Fproduct%2Fs%2Fu%2Fsuperbold_white.jpg",
+        "pname" : "DRS Helmet Flat Black",
+        "description" : "Flat black BMX helmet from Australian brand DRS. DRS Helmets are an affordable quality Australian Standards Approved BMX helmet.These feature great style and perfect fit. Each helmet comes with 2 x sets of pads.",
+        "price" : "15000",
+        "qunatity" : "",
+        "minimumQuantity" : "15000"
     }
 ]

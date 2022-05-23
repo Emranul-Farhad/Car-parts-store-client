@@ -19,14 +19,14 @@ const Motorshow = () => {
 
     return (
         <div>
-            <div className='row m-5'>
+            <div className='row m-5 gy-5  '>
                 <div className='col-lg-6 col-md-12 col-sm-12'>
                 <img className='w-[90%]' src="https://template.hasthemes.com/oswan/oswan/assets/img/banner/banner-2.png" alt="motor" />
                 </div>
                 {/* swiper slider */}
             
                 
-              <div className='col-lg-6 col-md-12 col-sm-12'>
+              <div className='col-lg-6 col-md-12 col-sm-12 lg:hidden md:block'>
               <Swiper
               className='h-[430px] w-[300px]'
                     modules={[Navigation, Autoplay, Pagination, Scrollbar, Zoom, A11y]}
@@ -49,6 +49,28 @@ const Motorshow = () => {
                 </Swiper>
               </div>
                
+              <div className='col-lg-6 col-md-12 col-sm-12 hidden lg:block'>
+              <Swiper
+              className=''
+                    modules={[Navigation, Autoplay, Pagination, Scrollbar, Zoom, A11y]}
+                    spaceBetween={20}
+                    slidesPerView={2}
+                    centeredslide="true"
+                    // navigation
+                    key={bikes.length}
+                    autoplay={true}
+                >
+
+                    {
+                        bikes.map((bike, index) => (
+                            <SwiperSlide key={index} >
+                                <Motorbikecard key={index} bike={bike} ></Motorbikecard>
+                            </SwiperSlide>
+                        ))
+                    }
+
+                </Swiper>
+              </div>
             
 
             </div>
