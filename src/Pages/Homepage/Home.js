@@ -1,4 +1,5 @@
 import React from 'react';
+import Brandwiseshops from '../../Components/Brandwiseshop/Brandwiseshops';
 import Delivery from '../../Components/HomepageComponents/DeliverySystem/Delivery';
 import Hero from '../../Components/HomepageComponents/Hero';
 import Motorshow from '../../Components/HomepageComponents/MotorbikeShowcase/Motorshow';
@@ -33,8 +34,11 @@ const Home = () => {
                 <Tirerim></Tirerim>
             </div>
             {/* our policy delivery slogan*/}
-            <div>
+            <div className='mt-[130px]' >
                 <Delivery></Delivery>
+            </div>
+            <div className='mt-[130px]' >
+                <Brandwiseshops></Brandwiseshops>
             </div>
         </div>
     );

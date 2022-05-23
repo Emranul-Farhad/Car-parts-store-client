@@ -1,6 +1,25 @@
 # Getting Started with Create React App
 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+<!-- what i will use -->
+## Frond end Technology
+
+* React.js
+* Tailwind css
+* Tailwind css componets daysiui
+* Tailwind components tukit
+* React awesome slider
+* React spinner
+* React icom
+* React swiper.js
+* React Router
+* Rect form hook
+* Lottie animation
+* React spring Animaton
+
 
 ## Available Scripts
 
