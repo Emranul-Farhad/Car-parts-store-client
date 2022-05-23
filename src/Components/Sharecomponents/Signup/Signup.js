@@ -1,11 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 
 
 
-const Login = () => {
+const Signup = () => {
 
+  
 
     return (
         <div>
@@ -81,8 +82,18 @@ const Login = () => {
                                     </label>
                                     <input
                                         className="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
-                                        type="" placeholder="Enter your password** "  />
+                                        type="" placeholder="Enter your password** " />
                                 </div>
+                                {/* confirm password */}
+                                <div className="mt-8 content-center">
+                                    <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">
+                                        Password
+                                    </label>
+                                    <input
+                                        className="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
+                                        type="" placeholder="Enter your password** " />
+                                </div>
+                                {/* confirm password */}
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center">
                                         <input id="remember_me" name="remember_me" type="checkbox"
@@ -108,17 +119,18 @@ const Login = () => {
                                 </div>
                                 <p className="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
                                     <span>Don't have an account?</span>
-                                    <NavLink to='/signup'
+                                    <a href="/"
                                         className="text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign
-                                      up</NavLink>
+                                        up</a>
                                 </p>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };
 
-export default Login;
+export default Signup;
