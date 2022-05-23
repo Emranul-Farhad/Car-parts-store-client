@@ -3,13 +3,19 @@ import './Footer.css'
 import {BsFacebook} from 'react-icons/bs'
 import {FaTwitter} from 'react-icons/fa'
 import {AiFillLinkedin} from 'react-icons/ai'
+import { useLocation } from 'react-router-dom';
+
+
+
 
 const Footer = () => {
 
+  const {pathname} = useLocation()
+
     return (
-        <div>
+        <div style={ pathname.includes('/login') ? {display : "none"} : {display : "block" }
 
-
+        } >
             <footer class="new_footer_area bg_color">
                 <div class="new_footer_top">
                     <div class="container">
@@ -32,9 +38,9 @@ const Footer = () => {
                                     <ul class="list-unstyled f_list">
                                         <li><a className='font-bold uppercase text-[#FC5A34]  
                                         hover:text-[#e03f1a]' href="/">Rim</a></li>                                  
-                                        <li><a className='font-bold uppercase text-[#FC5A34]' href="#">Tire</a></li>
-                                        <li><a className='font-bold uppercase text-[#FC5A34]' href="#">Gear</a></li>
-                                        <li><a className='font-bold uppercase text-[#FC5A34]' href="#">Mirror</a></li>
+                                        <li><a className='font-bold uppercase text-[#FC5A34]' href="#brandwiseshop">Tire</a></li>
+                                        <li><a className='font-bold uppercase text-[#FC5A34]' href="#/">Gear</a></li>
+                                        <li><a className='font-bold uppercase text-[#FC5A34]' href="/">Mirror</a></li>
                                     </ul>
                                 </div>
                             </div>

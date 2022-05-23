@@ -1,10 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 
 
 
 const Nav = () => {
+
+    const {pathname} = useLocation()
 
     const navlinks = <>
     <li> <NavLink className="text-white font-bold" to='/'> Home</NavLink> </li>
@@ -14,9 +16,16 @@ const Nav = () => {
     <li> <NavLink className="text-white font-bold mr-1" to='/dashboard' > Dashboard </NavLink></li>
     <li><NavLink className="text-white font-bold" to='/login'> login </NavLink></li>
 </>
+
+// style={pathname.includes('/login') ? { display: "none" } : { display: "block" }
+
+// }
+
     return (
         <div>
-            <div>
+            <div  style={ pathname.includes('/login')? {display : "none"} : {display : "block" }
+
+            } >
             <div class="navbar bg-[#232634]  fixed top-0 z-20 ">
                 <div class="navbar-start">
                     <div class="dropdown">
