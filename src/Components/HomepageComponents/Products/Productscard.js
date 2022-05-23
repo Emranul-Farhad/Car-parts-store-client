@@ -17,12 +17,16 @@ const Productscard = ({ product }) => {
                         }
                     >
                         <div>
-                            <h1 className='text-[#E81938] font-extrabold' > {pname} </h1>
-                            <p className='descriptionhover'> {description.slice(0,200)} </p>
+                           <div>
+                           <h1 className='text-[#E81938] font-extrabold' title={pname} > {pname.slice(0,10)+ ".." } </h1>
+                           </div>
+                            <p className='descriptionhover text-left font-bold'> {description.slice(0,200)} </p>
                             <div class="date font-extrabold text-[#E81938] ">$ {price} </div>
-                            <div class="tags">
-                                <div class="tag">HTML</div>
+                          <div>
+                          <div class="tags">
+                          <button class="btn bg-[#E81938] mt-2">Buy Now</button>
                             </div>
+                          </div>
                         </div>
                     </a>
                 </div>

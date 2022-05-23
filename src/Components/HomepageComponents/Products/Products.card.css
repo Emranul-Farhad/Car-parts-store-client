@@ -16,6 +16,11 @@ a {
 }
 
 
+.cardds-wrappers:hover .descriptionhover{
+    visibility: visible;
+    opacity: 10;
+}
+
 .cardd {
   font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
@@ -117,6 +122,17 @@ a {
 .cardd:hover:before, .cardd:hover:after {
   transform: scale(1);
 }
+
+
+.cardd .descriptionhover{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.cardd:hover .descriptionhover{
+    visibility: visible;
+}
+
 
 .cardd-grid-space .num {
   font-size: 3em;
