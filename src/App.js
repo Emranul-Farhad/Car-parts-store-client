@@ -4,6 +4,7 @@ import Hero from './Components/HomepageComponents/Hero';
 import Home from './Pages/Homepage/Home';
 import { Route, Routes } from 'react-router-dom';
 import Nav from './Components/Sharecomponents/Nav';
+import Footer from './Components/Sharecomponents/Footer/Footer';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

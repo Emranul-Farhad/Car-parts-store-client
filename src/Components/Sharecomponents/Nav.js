@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import icon from './Background.ico'
+
 
 
 
@@ -27,11 +27,7 @@ const Nav = () => {
                             {navlinks}
                         </ul>
                     </div>
-
                     {/* nav bar logo */}
-                    {/* <a class="btn btn-ghost normal-case text-4xl text-[#E81938]"> 
-                    <img className='w-[150px] h-[100px]' src="https://demo74.leotheme.com/prestashop/leo_mtdanstore_demo/img/m/8-brand_default.jpg" alt=""/>
-                    </a> */}
                     <img  src="http://apar.bdiakcml8h-e92498n216kr.p.runcloud.link/wp-content/uploads/2020/06/APAR-White-1.png" alt="" />
                     {/* nav bar logo */}
 
