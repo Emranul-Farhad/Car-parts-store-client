@@ -3,7 +3,7 @@ import './Products.card.css'
 
 
 const Productscard = ({ product }) => {
-    const { minimumQuantity, description, pname, img , price} = product
+    const { minimumQuantity, description, pname, img, price } = product
 
     return (
         <div>
@@ -17,16 +17,22 @@ const Productscard = ({ product }) => {
                         }
                     >
                         <div>
-                           <div>
-                           <h1 className='text-[#E81938] font-extrabold' title={pname} > {pname.slice(0,10)+ ".." } </h1>
-                           </div>
-                            <p className='descriptionhover text-left font-bold'> {description.slice(0,200)} </p>
-                            <div class="date font-extrabold text-[#E81938] ">$ {price} </div>
-                          <div>
-                          <div class="tags">
-                          <button class="btn bg-[#E81938] mt-2">Buy Now</button>
+                            <div>
+                                <h1 className='text-[#E81938] font-extrabold' title={pname} > {pname.slice(0, 10) + ".."} </h1>
                             </div>
-                          </div>
+                            <p className='descriptionhover text-left font-bold'> {description.slice(0, 200)} </p>
+
+                            <div class="date font-extrabold text-[#E81938] ">$ {price} </div>
+
+
+                            <div className='flex justify-between mt-2'>
+                                <div class="tags mt-2">
+                                    <button class="btn bg-[#E81938] mt-2">Buy Now</button>
+                                </div>
+                                <div className='mt-2'>
+                               <p className='uppercase font-bold'> require pices {minimumQuantity} </p>
+                                </div>
+                            </div>
                         </div>
                     </a>
                 </div>
