@@ -25,7 +25,7 @@ const Brandwiseshops = () => {
                 <p className='text-[#E81938] font-extrabold'> WE MANUFECTURE ALL PARTS </p>
             </div>
 
-           <div className=' mt-20 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 shadow-2xl rounded-lg '>
+           <div className=' mt-20 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-y-3 rounded-md'>
            {
                 brands.map((brand , index ) => <Brandwiseshopscard key={index} brand={brand} ></Brandwiseshopscard> )
             }

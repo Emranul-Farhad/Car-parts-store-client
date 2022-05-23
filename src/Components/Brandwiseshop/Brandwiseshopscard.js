@@ -4,8 +4,8 @@ const Brandwiseshopscard = ({ brand }) => {
     return (
         <div>
             <div>
-                <div className='shadow-2xl rounded-lg'>
-                    <img src={brand.img} alt="" />
+                <div className='brandimages w-[50%] mx-auto '>
+                    <img className='shadow-2xl rounded-3xl' src={brand.img} alt="" />
                 </div>
             </div>
         </div>

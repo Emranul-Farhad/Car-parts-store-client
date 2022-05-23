@@ -8,8 +8,8 @@ const Productscard = ({ product }) => {
     return (
         <div>
             <section class="cardds-wrappers">
-                <div class="cardd-grid-space">
-                    <a class="cardd" href="https://codetheweb.blog/2017/10/06/html-syntax/"
+                <div class="cardd-grid-space mains">
+                    <a class="cardd shadow-2xl " href="https://codetheweb.blog/2017/10/06/html-syntax/"
                         style={
                             {
                                 backgroundImage: `url("${img}")`,
