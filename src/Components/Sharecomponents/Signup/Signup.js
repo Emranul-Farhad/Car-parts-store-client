@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { useLocation } from 'react-router-dom';
 
 
@@ -6,7 +7,12 @@ import { useLocation } from 'react-router-dom';
 
 const Signup = () => {
 
-  
+    // react hook form 
+    const { register, formState: { errors }, handleSubmit } = useForm();
+
+    // handel submit
+    const onSubmit = data => console.log(data);
+
 
     return (
         <div>
@@ -62,8 +68,24 @@ const Signup = () => {
                                 <span className="text-gray-300 font-normal">or continue with</span>
                                 <span className="h-px w-16 bg-gray-200"></span>
                             </div>
-                            <form className="mt-8 space-y-6" action="#" method="POST">
+                            <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6" >
                                 {/* <input type="hidden" name="remember" placeholder='amder df' value="true" /> */}
+                                {/* name taking field start*/}
+                                <div className="relative">
+                                    <div className="absolute right-3 mt-4"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    </div>
+                                    <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
+
+                                    <input
+                                        className=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
+                                        type="email" placeholder="abc@gmail.com" />
+
+                                </div>
+                                {/* name taking field end here */}
                                 <div className="relative">
                                     <div className="absolute right-3 mt-4"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -73,8 +95,21 @@ const Signup = () => {
                                     </div>
                                     <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
                                     <input
+                                        type="text"
+                                        placeholder="Type your Email"
                                         className=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
-                                        type="email" placeholder="abc@gmail.com" />
+                                        {...register("name", {
+                                            required: {
+                                                value: true,
+                                                message: "Email required"
+                                            },
+                                            pattern: {
+                                                value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                                message: 'invalid Email'
+                                            }
+                                        })}
+                                    />
+                                    <label className='text-right'> aa</label>
                                 </div>
                                 <div className="mt-8 content-center">
                                     <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">
@@ -93,7 +128,7 @@ const Signup = () => {
                                         className="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
                                         type="" placeholder="Enter your password** " />
                                 </div>
-                                {/* confirm password */}
+                                {/* confirm password  end here*/}
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center">
                                         <input id="remember_me" name="remember_me" type="checkbox"
