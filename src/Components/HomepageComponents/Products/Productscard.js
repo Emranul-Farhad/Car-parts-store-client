@@ -9,13 +9,19 @@ const Productscard = ({ product }) => {
         <div>
             <section class="cardds-wrappers">
                 <div class="cardd-grid-space mains">
-                    <a class="cardd shadow-2xl " href="https://codetheweb.blog/2017/10/06/html-syntax/"
-                        style={
+                    <a class="cardd shadow-2xl " href='/'
+                    style ={
                             {
                                 backgroundImage: `url("${img}")`,
+                                backgroundSize : "70%",
+                                backgroundRepeat : "no-repeat"
+                                
                             }
                         }
+                    
                     >
+                    
+                      
                         <div>
                             <div>
                                 <h1 className='text-[#E81938] font-extrabold' title={pname} > {pname.slice(0, 10) + ".."} </h1>
@@ -34,6 +40,7 @@ const Productscard = ({ product }) => {
                                 </div>
                             </div>
                         </div>
+                        
                     </a>
                 </div>
 
