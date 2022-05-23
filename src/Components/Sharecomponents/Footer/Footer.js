@@ -13,7 +13,8 @@ const Footer = () => {
   const {pathname} = useLocation()
 
     return (
-        <div style={ pathname.includes('/login')  || ('/signup') ? {display : "none"} : {display : "block" }
+        <div style={ pathname.includes('/login') ? {display : "none"} : {display : "block" } &&
+        pathname.includes('/signup') ? {display : "none"} : {display :  "block"}
 
         } >
             <footer class="new_footer_area bg_color">

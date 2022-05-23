@@ -17,11 +17,14 @@ const Nav = () => {
     <li><NavLink className="text-white font-bold" to='/login'> login </NavLink></li>
 </>
 
+// style={ pathname.includes('/login') || ('/signup') ? {display : "none"} : {display : "block" }
 
+// }
     return (
         <div>
-            <div  style={ pathname.includes('/login') || ('/signup') ? {display : "none"} : {display : "block" }
-
+            <div style={
+             pathname.includes('/login') ?{display : "none"}  : {display: "block"} &&
+             pathname.includes('/signup')? {display: "none"} : {display : "block"}           
             } >
             <div class="navbar bg-[#232634]  fixed top-0 z-20 ">
                 <div class="navbar-start">
