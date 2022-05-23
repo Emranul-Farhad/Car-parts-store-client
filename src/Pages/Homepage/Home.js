@@ -7,6 +7,7 @@ import Offerbanner from '../../Components/HomepageComponents/Offerbanner/Offerba
 import Products from '../../Components/HomepageComponents/Products/Products';
 import Tirerim from '../../Components/HomepageComponents/Tireshowcase/Tirerim';
 import Timercount from '../../Components/Timercount';
+import Productsdetails from '../Productsdetails/Productsdetails';
 
 
 
@@ -44,6 +45,9 @@ const Home = () => {
             {/* products show all*/}
             <div className='mt-[120px]'>
                 <Products></Products>
+            </div>
+            <div>
+                <Productsdetails></Productsdetails>
             </div>
         </div>
     );
