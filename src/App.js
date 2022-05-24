@@ -10,6 +10,8 @@ import Login from './Components/Sharecomponents/Login/Login';
 import Signup from './Components/Sharecomponents/Signup/Signup';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Users from './Components/DashboardComponents/Users';
+import Allproductsshow from './Components/AllproductsShow/Allproductsshow';
+import Checkout from './Components/Checkoutpages/Checkout';
 
 
 
@@ -26,6 +28,10 @@ function App() {
         <Route path='/blogs' element={<Blog></Blog>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<Signup></Signup>} ></Route>
+        <Route path='/products' element={<Allproductsshow></Allproductsshow>} ></Route>
+        <Route path='/checkout/:id' element={<Checkout></Checkout>} ></Route> 
+
+
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
         <Route path='users' element={<Users></Users>} ></Route>
         </Route>

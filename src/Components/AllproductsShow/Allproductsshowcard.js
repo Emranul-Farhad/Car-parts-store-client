@@ -1,15 +1,21 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Products.card.css'
+import { NavLink, useNavigate } from 'react-router-dom';
 
 
-const Productscard = ({ product }) => {
-    const { minimumQuantity, description, pname, img, price } = product
 
-  const navigate = useNavigate()
+
+const Allproductsshowcard = ({allproduct}) => {
+
+    // all data that i waana show here distructure from map
+    const { minimumQuantity, description, pname, img, price , _id } = allproduct
+    
+    // navigate handel for check out
+      const navigate = useNavigate()
+
+
 
     return (
-        <div>
+        <div className='mt-10'>
             <section className="cardds-wrappers">
                 <div className="cardd-grid-space mains">
                     <div className="cardd shadow-2xl "
@@ -36,7 +42,7 @@ const Productscard = ({ product }) => {
 
                             <div className='flex justify-between mt-2'>
                                 <div className="tags mt-2">
-                                    <button onClick={()=> navigate('/checkout')} className="btn bg-[#E81938] mt-2">Buy Now</button>
+                                    <button onClick={()=> navigate (`/checkout/${_id}`) } className="btn bg-[#E81938] mt-2">Buy Now</button>
                                 </div>
                                 <div className='mt-2'>
                                <p className='uppercase font-bold'> require pices {minimumQuantity} </p>
@@ -53,4 +59,4 @@ const Productscard = ({ product }) => {
     );
 };
 
-export default Productscard;
+export default Allproductsshowcard;

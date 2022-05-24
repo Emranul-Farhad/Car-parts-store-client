@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Productscard from './Productscard';
 
 
@@ -13,6 +14,9 @@ const Products = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
+
+    // navigate handel
+     const navigate = useNavigate()
 
      const products = allproducts.slice(0,3)
      console.log(products);
@@ -29,6 +33,9 @@ const Products = () => {
                         <Productscard product={product} key={index} ></Productscard>
                     )
                 }
+            </div>
+            <div>
+                <button onClick={()=> navigate('/products')} className='mt-20'>See more..</button>
             </div>
         </div>
     );
