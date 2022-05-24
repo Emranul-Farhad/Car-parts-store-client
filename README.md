@@ -23,6 +23,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Tailwind componets for login sign up
 * React Form 
 * React Icons
+* React toastfy
+* sweet alert
  
 
 

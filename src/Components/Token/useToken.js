@@ -24,7 +24,11 @@ const useToken = (user) => {
             body: JSON.stringify(currentuser),
         })
         .then(res => res.json())
-        .then(data => console.log(data, " gert from here"))
+        .then(data => {
+           const getToken = data.token;
+           localStorage.setItem("accesstoken" , getToken)    
+            console.log(data)
+        })
 
         }
         
