@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { NavLink, useLocation } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../Fire key/Firekey';
 import Swal from 'sweetalert2';
 import useToken from '../../Token/useToken';
@@ -24,9 +24,13 @@ const Signup = () => {
     // handel google sign in
     const [signInWithGoogle, googleuser, googleloading, googlerror] = useSignInWithGoogle(auth);
 
+    // user name taking
+    const [updateProfile, updating, error] = useUpdateProfile(auth);
+
+
 
     // handel submit
-    const onSubmit = data => {
+    const onSubmit = async(data) => {
         if(data.password !== data.confirmpassword){
             return (
                 Swal.fire({
@@ -38,9 +42,10 @@ const Signup = () => {
                   
             )
         }
-        createUserWithEmailAndPassword(data.email, data.password)
+        await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({ displayName: data.name });
         console.log(data);
-        console.log(data.email, data.password)
+        console.log(data.email, data.password, data.name)
     }
 
 

@@ -16,6 +16,7 @@ const Nav = () => {
     // logout function
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accesstoken')
       };
 
     const navlinks = <>

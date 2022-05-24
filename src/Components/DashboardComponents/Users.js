@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../Fire key/Firekey';
 
 
 const Users = () => {
+
+
+//   user name 
+   const [user] = useAuthState(auth)
+   const display = user?.displayName
+  console.log(display);
+
+//    users get api
+   const [users , SetUsers] = useState([])
+
+    useEffect(()=> {
+        fetch("http://localhost:8000/users" )
+        .then(res => res.json())
+        .then(data => SetUsers(data))
+    },[])
+
 
 
     return (
@@ -15,8 +33,8 @@ const Users = () => {
                                     <div class="card-header">Active Users
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
-                                                <button class="active btn btn-focus">Last Week</button>
-                                                <button class="btn btn-focus">All Month</button>
+                                                <button class="active btn btn-focus">ACTIVE USERS</button>
+                                                <button class="btn btn-focus">ACTIVE USERS</button>
                                             </div>
                                         </div>
                                     </div>
@@ -26,13 +44,49 @@ const Users = () => {
                                             <tr>
                                                 <th class="text-center">#</th>
                                                 <th>Name</th>
-                                                <th class="text-center">City</th>
+                                                <th class="text-center">Email</th>
                                                 <th class="text-center">Status</th>
-                                                <th class="text-center">Actions</th>
+                                               
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
+
+                                                {
+                                                    users.map((usera, index ) =>  
+                                                        
+                                                        <>
+                                                        
+                                                        <tr>
+                                                <td class="text-center text-muted">{index+1} </td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                {/* <div class="widget-content-left">
+                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt=""/>
+                                                                </div> */}
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">
+                                                                    {user?.displayName}  </div>
+                                                                <div class="widget-subheading opacity-7">  </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center"> {usera?.email} </td>
+                                               
+                                                <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                                                </td>
+                                            </tr> 
+                                                        
+                                                        </>
+                                                        
+                                                        )
+                                                }
+
+                                            {/* <tr>
                                                 <td class="text-center text-muted">#345</td>
                                                 <td>
                                                     <div class="widget-content p-0">
@@ -56,81 +110,9 @@ const Users = () => {
                                                 <td class="text-center">
                                                     <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center text-muted">#347</td>
-                                                <td>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-3">
-                                                                <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt=""/>
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">Ruben Tillman</div>
-                                                                <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">Berlin</td>
-                                                <td class="text-center">
-                                                    <div class="badge badge-success">Completed</div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center text-muted">#321</td>
-                                                <td>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-3">
-                                                                <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/2.jpg" alt=""/>
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">Elliot Huber</div>
-                                                                <div class="widget-subheading opacity-7">Lorem ipsum dolor sic</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">London</td>
-                                                <td class="text-center">
-                                                    <div class="badge badge-danger">In Progress</div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-3" class="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center text-muted">#55</td>
-                                                <td>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-3">
-                                                                <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/1.jpg" alt=""/></div>
-                                                            </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">Vinnie Wagstaff</div>
-                                                                <div class="widget-subheading opacity-7">UI Designer</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">Amsterdam</td>
-                                                <td class="text-center">
-                                                    <div class="badge badge-info">On Hold</div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-4" class="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
+                                            </tr> */}
+                                            
+                                            
                                             
                                             </tbody>
                                         </table>

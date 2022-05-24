@@ -4,7 +4,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 
-
 const useToken = (user) => {
 
     // user state for token
