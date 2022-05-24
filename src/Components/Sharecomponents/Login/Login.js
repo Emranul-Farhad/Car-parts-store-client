@@ -17,7 +17,7 @@ const Login = () => {
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
+        sigininerror,
       ] = useSignInWithEmailAndPassword(auth);
 
     //  handel google login
@@ -29,6 +29,12 @@ const Login = () => {
         console.log(data)
         console.log(data.email , data.password );
     };
+
+//  handel error for login
+    let looginpageerros ;
+    if(sigininerror || googlerror){
+     looginpageerros  = <p> { googlerror?.message   || sigininerror?.message} </p>
+    }
 
 
 
@@ -158,13 +164,10 @@ const Login = () => {
                                     </label>
                                 </div>
                                 <div className="flex items-center justify-between">
-                                    <div className="flex items-center">
-                                        <input id="remember_me" name="remember_me" type="checkbox"
-                                            className="h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded" />
-                                        <label for="remember_me" className="ml-2 block text-sm text-gray-900">
-                                            Remember me
-                                        </label>
+                                    <div className="flex items-center ">
+                                        <p>{looginpageerros}</p>
                                     </div>
+                                    
                                     <div className="text-sm">
                                         <a href="#" className="text-indigo-400 hover:text-blue-500">
                                             Forgot your password?
