@@ -12,6 +12,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Users from './Components/DashboardComponents/Users';
 import Allproductsshow from './Components/AllproductsShow/Allproductsshow';
 import Checkout from './Components/Checkoutpages/Checkout';
+import Profile from './Components/DashboardComponents/Profile';
 
 
 
@@ -34,6 +35,7 @@ function App() {
 
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
         <Route path='users' element={<Users></Users>} ></Route>
+        <Route path='profile' element={<Profile></Profile>} ></Route>
         </Route>
       </Routes>
       <Footer></Footer>
