@@ -8,6 +8,7 @@ import Products from '../../Components/HomepageComponents/Products/Products';
 import Tirerim from '../../Components/HomepageComponents/Tireshowcase/Tirerim';
 import Timercount from '../../Components/Timercount';
 import Productsdetails from '../Productsdetails/Productsdetails';
+import Reviews from '../Review/Reviews';
 
 
 
@@ -48,6 +49,10 @@ const Home = () => {
             </div>
             <div>
                 <Productsdetails></Productsdetails>
+            </div>
+            {/* review caousal*/}
+            <div>
+                <Reviews></Reviews>
             </div>
         </div>
     );

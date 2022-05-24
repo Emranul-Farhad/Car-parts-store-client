@@ -21,7 +21,7 @@ const Nav = () => {
 
     const navlinks = <>
         <li> <NavLink className="text-white font-bold" to='/'> Home</NavLink> </li>
-        <li> <NavLink className="text-white font-bold" to='/appoinment'> Products </NavLink> </li>
+        <li> <NavLink className="text-white font-bold" to='/review'> Review </NavLink> </li>
         <li> <NavLink className="text-white font-bold" to='/blogs' > Blogs </NavLink> </li>
         <li> <NavLink className="text-white font-bold" to='/Contact us' > Contact us </NavLink></li>
         <li> <NavLink className="text-white font-bold mr-1" to='/dashboard' > Dashboard </NavLink></li>
