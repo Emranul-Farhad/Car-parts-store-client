@@ -29,13 +29,12 @@ const Signup = () => {
     const onSubmit = data => {
         if(data.password !== data.confirmpassword){
             return (
-                alert ("mismatched")
-                // Swal.fire({
-                //     icon: 'error',
-                //     title: 'Oops...',
-                //     text: 'Something went wrong!',
-                //     footer: '<a href="">Why do I have this issue?</a>'
-                //   })
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                  })
                   
             )
         }

@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
 import auth from '../../Fire key/Firekey';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import useToken from '../../Token/useToken';
 
 
 
@@ -21,7 +22,7 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
 
     //  handel google login
-    const [signInWithGoogle, googleuser, googleloading, googlerror] = useSignInWithGoogle(auth); 
+    const [signInWithGoogle, googleloginuser, googleloading, googlerror] = useSignInWithGoogle(auth); 
 
     //handel submit 
     const onSubmit = data => {
@@ -36,6 +37,11 @@ const Login = () => {
      looginpageerros  = <p> { googlerror?.message   || sigininerror?.message} </p>
     }
 
+
+//  navigate handel
+//  login user store 
+     const [token] = useToken( user || googleloginuser) 
+    
 
 
     return (
