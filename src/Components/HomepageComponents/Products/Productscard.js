@@ -4,7 +4,7 @@ import './Products.card.css'
 
 
 const Productscard = ({ product }) => {
-    const { minimumQuantity, description, pname, img, price } = product
+    const { minimumQuantity, description, pname, img, price, _id } = product
 
   const navigate = useNavigate()
 
@@ -36,7 +36,7 @@ const Productscard = ({ product }) => {
 
                             <div className='flex justify-between mt-2'>
                                 <div className="tags mt-2">
-                                    <button onClick={()=> navigate('/checkout')} className="btn bg-[#E81938] mt-2">Buy Now</button>
+                                    <button onClick={()=> navigate (`/checkout/${_id}`) }  className="btn bg-[#E81938] mt-2">Buy Now</button>
                                 </div>
                                 <div className='mt-2'>
                                <p className='uppercase font-bold'> require pices {minimumQuantity} </p>

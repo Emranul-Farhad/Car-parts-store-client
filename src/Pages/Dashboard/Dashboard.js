@@ -22,6 +22,7 @@ const Dashboard = () => {
 
                         <li><NavLink className="text-white uppercase font-bold" to='/dashboard/users'> All USERS </NavLink> </li>
                         <li><NavLink className="text-white font-bold uppercase" to='/'> My Orders </NavLink> </li>
+                        <li><NavLink className="text-white font-bold uppercase" to='/'> My Profile </NavLink> </li>
                     </ul>
 
                 </div>
