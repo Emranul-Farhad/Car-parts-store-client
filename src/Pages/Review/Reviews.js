@@ -35,6 +35,35 @@ const Reviews = () => {
         name : 'Syed Asif Ahmed',
         from : 'Rajshahi',
         img : 'https://i.imgur.com/MfjEql4.jpg'
+    },
+    {
+        quote : 'I was extremely impressed with him at my first appointment because he cared!  In addition to being a great doctor, he is kind, compassionate and down to earth. I would recommend him to anyone who is suffering from headaches like I was.',
+        name : 'Syed Asif Ahmed',
+        from : 'Rajshahi',
+        img : 'https://i.imgur.com/MfjEql4.jpg'
+    },
+    {
+        quote : 'I was extremely impressed with him at my first appointment because he cared!  In addition to being a great doctor, he is kind, compassionate and down to earth. I would recommend him to anyone who is suffering from headaches like I was.',
+        name : 'Syed Asif Ahmed',
+        from : 'Rajshahi',
+        img : 'https://i.imgur.com/MfjEql4.jpg'
+    },
+    {
+        quote : 'I was extremely impressed with him at my first appointment because he cared!  In addition to being a great doctor, he is kind, compassionate and down to earth. I would recommend him to anyone who is suffering from headaches like I was.',
+        name : 'Syed Asif Ahmed',
+        from : 'Rajshahi',
+        img : 'https://i.imgur.com/MfjEql4.jpg'
+    },{
+        quote : 'I was extremely impressed with him at my first appointment because he cared!  In addition to being a great doctor, he is kind, compassionate and down to earth. I would recommend him to anyone who is suffering from headaches like I was.',
+        name : 'Syed Asif Ahmed',
+        from : 'Rajshahi',
+        img : 'https://i.imgur.com/MfjEql4.jpg'
+    },
+    {
+        quote : 'I was extremely impressed with him at my first appointment because he cared!  In addition to being a great doctor, he is kind, compassionate and down to earth. I would recommend him to anyone who is suffering from headaches like I was.',
+        name : 'Syed Asif Ahmed',
+        from : 'Rajshahi',
+        img : 'https://i.imgur.com/MfjEql4.jpg'
     }
 ]
 
@@ -55,14 +84,32 @@ console.log(reviews);
             <Swiper
             modules={[Autoplay, Pagination, Zoom, A11y]}
             spaceBetween={20}
-            slidesPerView={3}
+            slidesPerView={1}
             centeredslide="true"
             key={reviews.length}
             autoplay={true}
+            breakpoints={{
+                520: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                  },
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 0,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 0,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+              }}
         >
 
             {
-                reviews .map((review, index) => (
+                reviews.map((review, index) => (
                     <SwiperSlide key={index} >
                         <ReviewsCard review={review} ></ReviewsCard>
                     </SwiperSlide>
