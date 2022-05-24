@@ -1,18 +1,31 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { NavLink, useLocation } from 'react-router-dom';
-import {FcGoogle} from 'react-icons/fc'
-
+import { FcGoogle } from 'react-icons/fc'
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../Fire key/Firekey';
 
 
 const Signup = () => {
 
     // react hook form 
     const { register, formState: { errors }, handleSubmit } = useForm();
+    //  create user handel
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    // handel google sign in
+    const [signInWithGoogle, googleuser, googleloading, googlerror] = useSignInWithGoogle(auth);
+
 
     // handel submit
     const onSubmit = data => {
+        createUserWithEmailAndPassword(data.email, data.password)
         console.log(data);
+        console.log(data.email, data.password)
     }
 
 
@@ -64,16 +77,17 @@ const Signup = () => {
                             {/*  */}
                             <div className="flex flex-row justify-center items-center space-x-3">
 
+                                {/* google sign in */}
+                                <button
+                                onClick={() => signInWithGoogle()}
+                                    className="w-11 h-11 items-center justify-center inline-flex rounded-2xl font-bold text-lg  text-white bg-white shadow-lg cursor-pointer transition ease-in duration-300"
+                                    rel="noreferrer"
+                                >
+                                    <FcGoogle></FcGoogle>
 
-<button
-    className="w-11 h-11 items-center justify-center inline-flex rounded-2xl font-bold text-lg  text-white bg-white shadow-lg cursor-pointer transition ease-in duration-300"
-    rel="noreferrer"
->
-    <FcGoogle></FcGoogle>
-
-</button>
-
-</div>
+                                </button>
+                                {/* google sign in handel */}
+                            </div>
                             {/* hh */}
                             <div className="flex items-center justify-center space-x-2">
                                 <span className="h-px w-16 bg-gray-200"></span>
@@ -92,25 +106,25 @@ const Signup = () => {
                                     </div>
                                     <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">Name</label>
 
-                                      <input
-                                    type="text"
-                                    placeholder="Type your Name"
-                                    className="w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
-                                    {...register("name", {
-                                        required: {
-                                            value: true,
-                                            message: "name required"
-                                        },
-                                        minLength: {
-                                            value: 2,
-                                            message: 'please input your full name'
-                                        }
-                                    })}
-                                />  
+                                    <input
+                                        type="text"
+                                        placeholder="Type your Name"
+                                        className="w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
+                                        {...register("name", {
+                                            required: {
+                                                value: true,
+                                                message: "name required"
+                                            },
+                                            minLength: {
+                                                value: 2,
+                                                message: 'please input your full name'
+                                            }
+                                        })}
+                                    />
                                     <label className="label absolute font-bold">
-                                            {errors.name?.type === 'minLength' && <span className="label-text-alt text-[red] "> {errors.name.message} </span>}
-                                            {errors.name?.type === 'required' && <span className="label-text-alt text-[red] "> {errors.name.message} </span>}
-                                        </label>
+                                        {errors.name?.type === 'minLength' && <span className="label-text-alt text-[red] "> {errors.name.message} </span>}
+                                        {errors.name?.type === 'required' && <span className="label-text-alt text-[red] "> {errors.name.message} </span>}
+                                    </label>
                                 </div>
                                 {/* name taking field end here */}
                                 <div className="relative">
@@ -166,52 +180,52 @@ const Signup = () => {
                                         })}
                                     />
                                     <label className="label absolute font-bold mt-0">
-                                    {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-600  "> {errors.password.message} </span>}
-                                    {errors.password?.type === 'required' && <span className="label-text-alt text-[#f00] "> {errors.password.message} </span>}
-                                </label>
+                                        {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-600  "> {errors.password.message} </span>}
+                                        {errors.password?.type === 'required' && <span className="label-text-alt text-[#f00] "> {errors.password.message} </span>}
+                                    </label>
                                 </div>
                                 {/* password end here */}
                                 {/* confirm password start here*/}
                                 <div className="mt-8 content-center">
                                     <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">
-                                       Confirm Password
+                                        Confirm Password
                                     </label>
                                     {/* <input
                                         className="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
                                         type="" placeholder="Enter your password** " /> */}
-                                        <input
-                                    type="password"
-                                    placeholder="Type your Password"
-                                    className="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
-                                    {...register("confirmpassword", {
-                                        required: {
-                                            value: true,
-                                            message: "Passwod required"
-                                        },
-                                        pattern: {
-                                            value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-                                            message: 'eight characters one uppercase  lowercase letter one number one special character'
-                                        }
-                                    })}
-                                />
-                                     <label className="label absolute font-bold  mt-0">
-                                    {errors.confirmpassword?.type === 'pattern' && <span className="label-text-alt text-red-600  "> {errors.password.message} </span>}
-                                    {errors.confirmpassword?.type === 'required' && <span className="label-text-alt text-[#f00] "> {errors.password.message} </span>}
-                                </label>
+                                    <input
+                                        type="password"
+                                        placeholder="Type your Password"
+                                        className="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
+                                        {...register("confirmpassword", {
+                                            required: {
+                                                value: true,
+                                                message: "Passwod required"
+                                            },
+                                            pattern: {
+                                                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                                                message: 'eight characters one uppercase  lowercase letter one number one special character'
+                                            }
+                                        })}
+                                    />
+                                    <label className="label absolute font-bold  mt-0">
+                                        {errors.confirmpassword?.type === 'pattern' && <span className="label-text-alt text-red-600  "> {errors.password.message} </span>}
+                                        {errors.confirmpassword?.type === 'required' && <span className="label-text-alt text-[#f00] "> {errors.password.message} </span>}
+                                    </label>
                                 </div>
                                 {/* confirm password  end here*/}
                                 <div className="flex items-center justify-between mt-5">
-                                    
+
                                 </div>
                                 <div>
-                                    
+
                                     <input
-                                    className='w-96 mx-2 className="w-full flex justify-center bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"'
-                                    type="submit"  />
+                                        className='w-96 mx-2 className="w-full flex justify-center bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"'
+                                        type="submit" />
                                 </div>
                                 <p className="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
                                     <span>Already have an account?</span>
-                                        <NavLink to='/login'  className="font-bold text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300"> LOGIN </NavLink>
+                                    <NavLink to='/login' className="font-bold text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300"> LOGIN </NavLink>
                                 </p>
                             </form>
                         </div>

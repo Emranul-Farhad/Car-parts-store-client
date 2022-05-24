@@ -19,6 +19,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Rect form hook
 * Lottie animation
 * React spring Animaton
+* React counter 
+* Tailwind componets for login sign up
+* React Form 
+* React Icons
+ 
 
 
 ## Available Scripts
