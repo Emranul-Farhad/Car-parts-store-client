@@ -9,6 +9,7 @@ import Blog from './Pages/Blog/Blog';
 import Login from './Components/Sharecomponents/Login/Login';
 import Signup from './Components/Sharecomponents/Signup/Signup';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Users from './Components/DashboardComponents/Users';
 
 
 
@@ -25,7 +26,9 @@ function App() {
         <Route path='/blogs' element={<Blog></Blog>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<Signup></Signup>} ></Route>
-        <Route path='/dashboard' element={<Dashboard></Dashboard>} ></Route>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+        <Route path='users' element={<Users></Users>} ></Route>
+        </Route>
       </Routes>
       <Footer></Footer>
     </div>
