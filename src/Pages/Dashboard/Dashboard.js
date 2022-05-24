@@ -20,8 +20,8 @@ const Dashboard = () => {
                     <label for="dashboard" class="drawer-overlay"></label>
                     <ul class="menu p-4 overflow-y-auto w-[200px] bg-[#232634] text-base-content">
 
-                        <li><NavLink className="text-white uppercase font-bold" to='/dashboard/users'>USERS </NavLink> </li>
-                        <li><NavLink className="text-white font-bold uppercase" to='/'> amader</NavLink> </li>
+                        <li><NavLink className="text-white uppercase font-bold" to='/dashboard/users'> All USERS </NavLink> </li>
+                        <li><NavLink className="text-white font-bold uppercase" to='/'> My Orders </NavLink> </li>
                     </ul>
 
                 </div>

@@ -6,13 +6,16 @@ import Productscard from './Productscard';
 
 const Products = () => {
 
-    const [products, setProducts] = useState([])
+    const [allproducts, setProducts] = useState([])
 
     useEffect(() => {
-        fetch("test.json")
+        fetch("http://localhost:8000/products")
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
+
+     const products = allproducts.slice(0,3)
+     console.log(products);
 
     return (
         <div>
