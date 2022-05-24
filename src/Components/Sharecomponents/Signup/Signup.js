@@ -12,12 +12,12 @@ const Signup = () => {
     // react hook form 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    //  create user handel
+    //  create user handel email and password
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
-        error,
+        signinerror,
     ] = useCreateUserWithEmailAndPassword(auth);
 
     // handel google sign in
@@ -39,6 +39,13 @@ const Signup = () => {
         createUserWithEmailAndPassword(data.email, data.password)
         console.log(data);
         console.log(data.email, data.password)
+    }
+
+
+    // handeel error
+    let signerrormessage ;
+    if(signinerror || googlerror){
+        signerrormessage = <p> {signinerror?.message  || googlerror?.message} </p>
     }
 
 
@@ -225,13 +232,14 @@ const Signup = () => {
                                         {errors.confirmpassword?.type === 'pattern' && <span className="label-text-alt text-red-600  "> {errors.password.message} </span>}
                                         {errors.confirmpassword?.type === 'required' && <span className="label-text-alt text-[#f00] "> {errors.password.message} </span>}
                                     </label>
+                                    <p className='absolute '> {signerrormessage} </p>
                                 </div>
                                 {/* confirm password  end here*/}
                                 <div className="flex items-center justify-between mt-5">
 
                                 </div>
+                              
                                 <div>
-
                                     <input
                                         className='w-96 mx-2 className="w-full flex justify-center bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"'
                                         type="submit" />

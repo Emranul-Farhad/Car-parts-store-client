@@ -38,15 +38,15 @@ const Nav = () => {
                 <div className="navbar bg-[#232634]  fixed top-0 z-20 ">
                     <div className="navbar-start">
                         <div className="dropdown">
-                            <label tabindex="0" className="btn btn-ghost lg:hidden">
+                            <label tabindex="0" className="btn btn-primary lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </label>
-                            <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#232634] rounded-box w-52">
                                 {navlinks}
                             </ul>
                         </div>
                         {/* nav bar logo */}
-                        <img src="http://apar.bdiakcml8h-e92498n216kr.p.runcloud.link/wp-content/uploads/2020/06/APAR-White-1.png" alt="" />
+                        <img className='mx-20 md:mx-0 lg:mx-0 '  src="http://apar.bdiakcml8h-e92498n216kr.p.runcloud.link/wp-content/uploads/2020/06/APAR-White-1.png" alt="" />
                         {/* nav bar logo */}
 
                     </div>

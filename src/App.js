@@ -8,6 +8,7 @@ import Footer from './Components/Sharecomponents/Footer/Footer';
 import Blog from './Pages/Blog/Blog';
 import Login from './Components/Sharecomponents/Login/Login';
 import Signup from './Components/Sharecomponents/Signup/Signup';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/blogs' element={<Blog></Blog>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<Signup></Signup>} ></Route>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>} ></Route>
       </Routes>
       <Footer></Footer>
     </div>
