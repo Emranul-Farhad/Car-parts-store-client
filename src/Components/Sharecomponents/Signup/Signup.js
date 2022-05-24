@@ -5,6 +5,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Fire key/Firekey';
 import Swal from 'sweetalert2';
+import useToken from '../../Token/useToken';
 
 
 const Signup = () => {
@@ -15,7 +16,7 @@ const Signup = () => {
     //  create user handel email and password
     const [
         createUserWithEmailAndPassword,
-        user,
+        signinuser,
         loading,
         signinerror,
     ] = useCreateUserWithEmailAndPassword(auth);
@@ -28,12 +29,14 @@ const Signup = () => {
     const onSubmit = data => {
         if(data.password !== data.confirmpassword){
             return (
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                    footer: '<a href="">Why do I have this issue?</a>'
-                  })
+                alert ("mismatched")
+                // Swal.fire({
+                //     icon: 'error',
+                //     title: 'Oops...',
+                //     text: 'Something went wrong!',
+                //     footer: '<a href="">Why do I have this issue?</a>'
+                //   })
+                  
             )
         }
         createUserWithEmailAndPassword(data.email, data.password)
@@ -47,6 +50,13 @@ const Signup = () => {
     if(signinerror || googlerror){
         signerrormessage = <p> {signinerror?.message  || googlerror?.message} </p>
     }
+
+
+    // handel jwt token and user store information
+    const [token] = useToken( signinuser || googleuser)
+  
+   
+
 
 
     return (
