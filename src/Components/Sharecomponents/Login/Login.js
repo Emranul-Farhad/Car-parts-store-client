@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
+import auth from '../../Fire key/Firekey';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 
 
@@ -10,10 +12,25 @@ const Login = () => {
     // react hook form
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+    // handel login with eamil passwords
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+
+    //  handel google login
+    const [signInWithGoogle, googleuser, googleloading, googlerror] = useSignInWithGoogle(auth); 
+
     //handel submit 
     const onSubmit = data => {
+        signInWithEmailAndPassword(data.email , data.password)
         console.log(data)
+        console.log(data.email , data.password );
     };
+
+
 
     return (
         <div>
@@ -66,6 +83,7 @@ const Login = () => {
 
 
                                 <button
+                                onClick={() => signInWithGoogle()}
                                     className="w-11 h-11 items-center justify-center inline-flex rounded-2xl font-bold text-lg  text-white bg-white shadow-lg cursor-pointer transition ease-in duration-300"
                                     rel="noreferrer"
                                 >

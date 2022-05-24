@@ -4,12 +4,14 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Fire key/Firekey';
+import Swal from 'sweetalert2';
 
 
 const Signup = () => {
 
     // react hook form 
     const { register, formState: { errors }, handleSubmit } = useForm();
+
     //  create user handel
     const [
         createUserWithEmailAndPassword,
@@ -17,12 +19,23 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
     // handel google sign in
     const [signInWithGoogle, googleuser, googleloading, googlerror] = useSignInWithGoogle(auth);
 
 
     // handel submit
     const onSubmit = data => {
+        if(data.password !== data.confirmpassword){
+            return (
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                  })
+            )
+        }
         createUserWithEmailAndPassword(data.email, data.password)
         console.log(data);
         console.log(data.email, data.password)
