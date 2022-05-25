@@ -16,6 +16,7 @@ import Profile from './Components/DashboardComponents/Profile';
 import Myorders from './Components/DashboardComponents/Myorders';
 import Require from './Components/Require page/Require';
 import Addreview from './Components/DashboardComponents/Add review section/Addreview';
+import Notfound from './Pages/Notfound page/Notfound';
 
 
 
@@ -42,6 +43,7 @@ function App() {
         <Route path='myorders' element={<Myorders></Myorders>} ></Route>
         <Route path='addreview' element={<Addreview></Addreview>} ></Route>
         </Route>
+        <Route path='*' element={<Notfound></Notfound>} ></Route>
       </Routes>
       <Footer></Footer>
     </div>

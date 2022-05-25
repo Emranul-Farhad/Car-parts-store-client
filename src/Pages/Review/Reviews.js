@@ -48,7 +48,12 @@ const styles = useSpring({
 })
 
 const { data:reviews , isLoading  } = useQuery('reviews', () =>
-fetch('http://localhost:8000/reviews').then(res =>
+fetch('http://localhost:8000/reviews',{
+  method : "POST",
+  headers : {
+    'authorization': `Bearer ${localStorage.getItem("accesstoken")}`
+  }
+} ).then(res =>
   res.json()
 )
 )

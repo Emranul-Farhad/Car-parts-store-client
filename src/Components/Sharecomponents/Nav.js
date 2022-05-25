@@ -34,7 +34,7 @@ const Nav = () => {
         <div>
             <div style={
                 pathname.includes('/login') ? { display: "none" } : { display: "block" } &&
-                    pathname.includes('/signup') ? { display: "none" } : { display: "block" }
+                pathname.includes('/signup') ? { display: "none" } : { display: "block" }
             } >
                 <div className="navbar bg-[#232634]  fixed top-0 z-20 ">
                     <div className="navbar-start">
