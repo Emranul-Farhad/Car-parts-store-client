@@ -36,12 +36,20 @@ const Checkout = () => {
         })
             .then(res => res.json())
             .then(data => setIdwiseproduct(data))
+            
     }, [id])
 
 
 
     // submit button submit info in db
+    // const [prices, setPrices] = useState(0)
+   
+
+
     const onSubmit = data => {
+
+        // const   = idwiseproduct.price * parseInt(data.number)
+       
         fetch("http://localhost:8000/orders", {
             method: 'POST', 
             headers: {                    
@@ -58,9 +66,10 @@ const Checkout = () => {
                
               })
               
-            console.log(data , "got from here")})
+            console.log(data , "got from here" , data.productname)})
     }
 
+ 
 
     return (
         <div>
@@ -71,15 +80,15 @@ const Checkout = () => {
                     <p className='text-left'> {idwiseproduct.description} </p>
                     <p className='text-left font-extrabold font-serif text-2xl mt-2 text-[#FC5A34]'> price: $ {idwiseproduct.price} </p>
                     <p className='text-left font-extrabold font-serif text-2xl mt-2 text-[#E81938]'> minimumQuantity : {idwiseproduct.minimumQuantity} </p>
-                    <div className="card-actions justify-end">
+                    {/* <div className="card-actions justify-end">
                         <button className="btn btn-primary">Listen</button>
-                    </div>
+                    </div> */}
                     <div>
-                        <form></form>
-
-                    {/* <input
-                            type="number"
-                            min={}
+                     <form onSubmit={handleSubmit(onSubmit)}>
+                        <input
+                            type="text"
+                            value={user?.email}
+                            readOnly
                             className=" mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                             {...register("email", {
                                 required: {
@@ -88,7 +97,52 @@ const Checkout = () => {
                                 },
 
                             })}
-                        /> */}
+                        />
+                           <input
+                            type="text"
+                            placeholder="Type products name"
+                           readOnly
+                           value={idwiseproduct.pname}
+                            className="mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                            {...register("productname", {
+                                required: {
+                                    value: true,
+                                    message: "products required"
+                                },
+
+                            })}
+                        />
+                           <input
+                           min={idwiseproduct.minimumQuantity}
+                            type="number"
+                            placeholder="prodcuts quantity"
+                            className="mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                            {...register("number", {
+                                required: {
+                                    value: true,
+                                    message: "Name required"
+                                },
+
+                            })}
+                        />
+                           <input
+                            type="text"
+                            defaultValue={''}
+                            placeholder=""
+                            className="mt-3 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                            {...register("number", {
+                                required: {
+                                    value: true,
+                                    message: "Name required"
+                                },
+
+                            })}
+                        />
+                        <input
+                                        className='w-40 mt-4 className="w-full flex justify-center bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"'
+                                        type="submit" />
+                    </form>
+
                     </div>
                 </div>
             </div>
@@ -101,7 +155,7 @@ const Checkout = () => {
                 <div className="card-body basis-2/3">
                     <h2 className="card-title text-extrabold text-2xl font-serif"> {idwiseproduct.pname} </h2>
 
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    {/* <form onSubmit={handleSubmit(onSubmit)}>
                         <input
                             type="text"
                             value={user?.email}
@@ -118,7 +172,7 @@ const Checkout = () => {
                            <input
                             type="text"
                             placeholder="Type your name"
-                            readOnly
+                            
                            value={idwiseproduct.pname}
                             className="mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                             {...register("productname", {
@@ -130,7 +184,7 @@ const Checkout = () => {
                             })}
                         />
                            <input
-                            type="text"
+                            type="number"
                             placeholder="Type your name"
                             className="mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                             {...register("name", {
@@ -156,7 +210,7 @@ const Checkout = () => {
                         <input
                                         className='w-40 mt-4 className="w-full flex justify-center bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"'
                                         type="submit" />
-                    </form>
+                    </form> */}
 
                     {/* <div className="card-actions justify-end">
                         <button className="btn btn-primary">Listen</button>

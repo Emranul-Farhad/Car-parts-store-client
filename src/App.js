@@ -15,6 +15,7 @@ import Checkout from './Components/Checkoutpages/Checkout';
 import Profile from './Components/DashboardComponents/Profile';
 import Myorders from './Components/DashboardComponents/Myorders';
 import Require from './Components/Require page/Require';
+import Addreview from './Components/DashboardComponents/Add review section/Addreview';
 
 
 
@@ -39,6 +40,7 @@ function App() {
         <Route path='users' element={<Users></Users>} ></Route>
         <Route path='profile' element={<Profile></Profile>} ></Route>
         <Route path='myorders' element={<Myorders></Myorders>} ></Route>
+        <Route path='addreview' element={<Addreview></Addreview>} ></Route>
         </Route>
       </Routes>
       <Footer></Footer>
