@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import ReviewsCard from './ReviewsCard';
+import { useSpring , animated} from 'react-spring';
 
 
 const Reviews = () => {
@@ -27,14 +28,32 @@ const Reviews = () => {
 //        fetch("reviews.json")
 //        .then(res=> res.json())
 //        .then(data => console.log(data))
-//    },[])
-console.log(reviews);
+//    },[])\
+
+
+
+// usespring handel
+
+const styles = useSpring({
+  loop: true,
+  to: [
+    { opacity: 1, color: '#FC3434' },
+    { opacity: 0, color: '#FC5A36' },
+  ],
+  from: { opacity: 0, color: 'red' },
+})
+
+  
 
     return (
         <div>
          
-         {
-             
+      <div className='mt-20'>
+      <animated.div className="font-extrabold text-3xl font-serif " style={styles}>
+         WHAT OUR CLIENTS SAYS</animated.div>
+      </div>
+
+         {    
             <Swiper
             modules={[Autoplay, Pagination, Zoom, A11y]}
             spaceBetween={20}

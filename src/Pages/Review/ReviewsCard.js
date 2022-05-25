@@ -7,7 +7,6 @@ const ReviewsCard = () => {
 
     return (
         <div>
-            <p>ss</p>
             <div>
 
                 {/*  */}
