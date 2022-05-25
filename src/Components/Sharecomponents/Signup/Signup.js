@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../Fire key/Firekey';
@@ -30,16 +30,16 @@ const Signup = () => {
 
 
     // handel submit
-    const onSubmit = async(data) => {
-        if(data.password !== data.confirmpassword){
+    const onSubmit = async (data) => {
+        if (data.password !== data.confirmpassword) {
             return (
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Password mismatched',
-                   
-                  })
-                  
+
+                })
+
             )
         }
         await createUserWithEmailAndPassword(data.email, data.password)
@@ -50,16 +50,24 @@ const Signup = () => {
 
 
     // handeel error
-    let signerrormessage ;
-    if(signinerror || googlerror){
-        signerrormessage = <p> {signinerror?.message  || googlerror?.message} </p>
+    let signerrormessage;
+    if (signinerror || googlerror) {
+        signerrormessage = <p> {signinerror?.message || googlerror?.message} </p>
     }
 
 
     // handel jwt token and user store information
-    const [token] = useToken( signinuser || googleuser)
-  
-   
+    // navigate handle
+    // const [token] = useToken( )
+    const location = useLocation()
+    const navigate = useNavigate()
+    let from = location.state?.from?.pathname || "/";
+    const [token] = useToken(signinuser || googleuser)
+    if (token) {
+        navigate(from, { replace: true });
+    }
+
+
 
 
 
@@ -113,7 +121,7 @@ const Signup = () => {
 
                                 {/* google sign in */}
                                 <button
-                                onClick={() => signInWithGoogle()}
+                                    onClick={() => signInWithGoogle()}
                                     className="w-11 h-11 items-center justify-center inline-flex rounded-2xl font-bold text-lg  text-white bg-white shadow-lg cursor-pointer transition ease-in duration-300"
                                     rel="noreferrer"
                                 >
@@ -252,7 +260,7 @@ const Signup = () => {
                                 <div className="flex items-center justify-between mt-5">
 
                                 </div>
-                              
+
                                 <div>
                                     <input
                                         className='w-96 mx-2 className="w-full flex justify-center bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"'

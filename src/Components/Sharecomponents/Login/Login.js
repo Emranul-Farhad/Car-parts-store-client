@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Navigate, NavLink } from 'react-router-dom';
+import { Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
 import auth from '../../Fire key/Firekey';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -38,11 +38,17 @@ const Login = () => {
     }
 
 
+    
+
+
 //  navigate handel
 //  login user store 
+const location = useLocation()
+const navigate = useNavigate()
+let from = location.state?.from?.pathname || "/";
      const [token] = useToken( loginuser || googleloginuser) 
     if(token){
-        Navigate('/')
+        navigate(from, { replace: true });
     }
 
 

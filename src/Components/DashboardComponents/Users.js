@@ -23,7 +23,7 @@ const Users = () => {
 //     },[])
 
 
-    const { data:users,isLoading , refetch } = useQuery('users', () =>
+    const { data:usera,isLoading , refetch } = useQuery('users', () =>
     fetch('http://localhost:8000/users').then(res =>
       res.json()
     )
@@ -70,13 +70,13 @@ const Users = () => {
 
     return (
         <div>
-           <p className='text-left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta magni fugiat earum libero voluptatibus cupiditate dolores maxime necessitatibus deleniti, cumque nisi illo vel natus! Voluptas vero, maxime porro sed tempora aspernatur a nisi eligendi dolore quia asperiores esse aliquid ipsa nesciunt facilis sint aut sit officiis deserunt impedit, blanditiis doloremque.</p> 
+           
            <div>
                
            <div class="row">
                             <div class="col-md-12">
                                 <div class="main-card mb-3 card">
-                                    <div class="card-header">Active Users
+                                    <div class="card-header"> total Active Users is {}
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
                                                 <button class="active btn btn-focus">ACTIVE USERS</button>
@@ -98,7 +98,7 @@ const Users = () => {
                                             <tbody>
 
                                                 {
-                                                    users.map((usera, index ) =>  
+                                                    usera.map((usera, index ) =>  
                                                         
                                                         <>
                                                         
@@ -124,7 +124,7 @@ const Users = () => {
                                                 {/* <td class="text-center"> {usera?.email} </td> */}
                                                
                                                 <td class="text-center">
-                                                   { usera?.role === "admin" ? <p>already</p> :  <button onClick={ ()=> makeadmin(usera?.email) }  type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm"> Admin </button>}
+                                                   { usera?.role === "admin" ? <p>Already Admin</p> :  <button onClick={ ()=> makeadmin(usera?.email) }  type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Make Admin </button>}
                                                 </td>
                                             </tr> 
                                                         

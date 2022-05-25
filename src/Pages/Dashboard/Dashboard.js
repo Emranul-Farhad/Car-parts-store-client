@@ -1,10 +1,17 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink, Outlet } from 'react-router-dom';
+import useAdmin from '../../Components/DashboardComponents/Admin/useAdmin';
+import auth from '../../Components/Fire key/Firekey';
 
 
 
 
 const Dashboard = () => {
+
+    const [user] = useAuthState(auth)
+  const [admin] = useAdmin(user)
+
 
     return (
         <div className='mt-[85px]'>
@@ -20,9 +27,11 @@ const Dashboard = () => {
                     <label for="dashboard" class="drawer-overlay"></label>
                     <ul class="menu p-4 overflow-y-auto w-[200px] bg-[#232634] text-base-content">
 
-                        <li><NavLink className="text-white uppercase font-bold" to='/dashboard/users'> All USERS </NavLink> </li>
-                        <li><NavLink className="text-white font-bold uppercase" to='/dashboard/myorders'>
-                             My Orders </NavLink> </li>
+                        { admin && <li><NavLink className="text-white uppercase font-bold" to='/dashboard/users'> All USERS </NavLink> </li>}
+
+                         <li><NavLink className="text-white font-bold uppercase" to='/dashboard/myorders'>
+                       My Orders </NavLink> </li>
+
                         <li><NavLink className="text-white font-bold uppercase" to='/dashboard/profile'> My Profile </NavLink> </li>
                     </ul>
 

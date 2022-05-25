@@ -14,6 +14,7 @@ import Allproductsshow from './Components/AllproductsShow/Allproductsshow';
 import Checkout from './Components/Checkoutpages/Checkout';
 import Profile from './Components/DashboardComponents/Profile';
 import Myorders from './Components/DashboardComponents/Myorders';
+import Require from './Components/Require page/Require';
 
 
 
@@ -31,7 +32,7 @@ function App() {
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<Signup></Signup>} ></Route>
         <Route path='/products' element={<Allproductsshow></Allproductsshow>} ></Route>
-        <Route path='/checkout/:id' element={<Checkout></Checkout>} ></Route> 
+        <Route path='/checkout/:id' element={ <Require><Checkout></Checkout></Require> } ></Route> 
 
 
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
