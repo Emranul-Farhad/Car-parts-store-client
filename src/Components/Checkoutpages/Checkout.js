@@ -37,7 +37,8 @@ const Checkout = () => {
     }, [id])
 
 
-    // submit button
+
+    // submit button submit info in db
     const onSubmit = data => {
         fetch("http://localhost:8000/orders", {
             method: 'POST', 

@@ -21,7 +21,8 @@ const Dashboard = () => {
                     <ul class="menu p-4 overflow-y-auto w-[200px] bg-[#232634] text-base-content">
 
                         <li><NavLink className="text-white uppercase font-bold" to='/dashboard/users'> All USERS </NavLink> </li>
-                        <li><NavLink className="text-white font-bold uppercase" to='/'> My Orders </NavLink> </li>
+                        <li><NavLink className="text-white font-bold uppercase" to='/dashboard/myorders'>
+                             My Orders </NavLink> </li>
                         <li><NavLink className="text-white font-bold uppercase" to='/dashboard/profile'> My Profile </NavLink> </li>
                     </ul>
 
