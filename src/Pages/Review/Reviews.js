@@ -8,6 +8,7 @@ import 'swiper/css/scrollbar';
 import ReviewsCard from './ReviewsCard';
 import { useSpring , animated} from 'react-spring';
 import { useQuery } from 'react-query';
+import Loading from '../../Components/Loading/Loading';
 
 
 const Reviews = () => {
@@ -21,7 +22,7 @@ const Reviews = () => {
 //         img : 'https://imgur.com/Zt8inGj.png'
 //     },
     
-// ]
+//  ]
 
 
 // const [revieewss , setReviews] = useState([])
@@ -30,7 +31,7 @@ const Reviews = () => {
 //        fetch("reviews.json")
 //        .then(res=> res.json())
 //        .then(data => console.log(data))
-//    },[])\
+//    },[])
 
 // react query handel for geyt review from db api handel
 
@@ -48,20 +49,36 @@ const styles = useSpring({
 })
 
 const { data:reviews , isLoading  } = useQuery('reviews', () =>
-fetch('http://localhost:8000/reviews',{
-  method : "POST",
-  headers : {
+fetch('http://localhost:8000/reviews' , {
+  method : "GET",
+  headers: {
     'authorization': `Bearer ${localStorage.getItem("accesstoken")}`
-  }
-} ).then(res =>
+}
+})
+.then(res =>
   res.json()
 )
 )
+console.log(reviews , " review");
 
 if(isLoading){
-  return <p>loading...</p>
+  return <Loading></Loading>
 }
   
+
+// const { data:reviews , isLoading  } = useQuery('reviews', () =>
+// fetch('http://localhost:8000/reviews')
+// .then(res =>
+//   res.json()
+// )
+// )
+// console.log(reviews , " review");
+
+// if(isLoading){
+//   return <Loading></Loading>
+// }
+
+
 
     return (
         <div>
@@ -100,7 +117,8 @@ if(isLoading){
         >
 
             {
-                reviews.map((review, index) => (
+             
+                reviews?.map((review, index) => (
                     <SwiperSlide key={index} >
                         <ReviewsCard review={review} ></ReviewsCard>
                     </SwiperSlide>

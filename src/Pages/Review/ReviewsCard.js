@@ -17,9 +17,11 @@ const ReviewsCard = ({review}) => {
                                 src="https://www.clker.com/cliparts/Y/m/n/S/F/E/orange-closing-quotation-mark-hi.png" class="quote" alt='a' />
                             <p className='text-left'> {qoute} </p>
                             
-                            <img src={img} class="user" alt='a' />
-                            <h3 className='mt-5 text-left'> Name : {name} </h3>
-                            <h3 className='mt-2 text-left'> From : {from} </h3>
+                            { img ? <img class='user' src={img} alt="pic" /> :
+                            <img src="https://fadzrinmadu.github.io/hosted-assets/design-testimonial-section-using-html-and-css/1.jpg"  class="user" alt='a' />}
+
+                            <h3 className='text-left mt-5'> Name : {name} </h3>
+                            <h3 className='text-left '> From : {from} </h3>
                         </div>
                     </div>
 

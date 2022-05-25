@@ -43,7 +43,7 @@ function App() {
         <Route path='myorders' element={<Myorders></Myorders>} ></Route>
         <Route path='addreview' element={<Addreview></Addreview>} ></Route>
         </Route>
-        <Route path='*' element={<Notfound></Notfound>} ></Route>
+        {/* <Route path='*' element={<Notfound></Notfound>} ></Route> */}
       </Routes>
       <Footer></Footer>
     </div>
