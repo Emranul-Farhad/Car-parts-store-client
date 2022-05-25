@@ -7,20 +7,22 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import ReviewsCard from './ReviewsCard';
 import { useSpring , animated} from 'react-spring';
+import { useQuery } from 'react-query';
 
 
 const Reviews = () => {
 
- const reviews = [
-    {
+//  const reviews = [
+//     {
 
-        quote : 'Apar motors products quality amazing as well apar deliver products in comiited day ',
-        name : 'Md Mazid Mahmud',
-        from : 'Dhaka',
-        img : 'https://imgur.com/Zt8inGj.png'
-    },
+//         quote : 'Apar motors products quality amazing as well apar deliver products in comiited day ',
+//         name : 'Md Mazid Mahmud',
+//         from : 'Dhaka',
+//         img : 'https://imgur.com/Zt8inGj.png'
+//     },
     
-]
+// ]
+
 
 // const [revieewss , setReviews] = useState([])
 
@@ -29,6 +31,8 @@ const Reviews = () => {
 //        .then(res=> res.json())
 //        .then(data => console.log(data))
 //    },[])\
+
+// react query handel for geyt review from db api handel
 
 
 
@@ -43,6 +47,15 @@ const styles = useSpring({
   from: { opacity: 0, color: 'red' },
 })
 
+const { data:reviews , isLoading  } = useQuery('reviews', () =>
+fetch('http://localhost:8000/reviews').then(res =>
+  res.json()
+)
+)
+
+if(isLoading){
+  return <p>loading...</p>
+}
   
 
     return (

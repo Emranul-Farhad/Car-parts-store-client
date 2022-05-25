@@ -9,9 +9,28 @@ const Addreview = () => {
 
     // submit handel
     const onSubmit = data => {
+        const review = {
+            qoute : data.qoute,
+            name: data.name,
+            img : data.img ,
+            from : data.from
+        }
+        console.log(review);
+        const url = "http://localhost:8000/reviews"
+        fetch(url,{
+            method : "POST",
+            headers: {                    
+                'Content-Type': 'application/json' ,            
+            },
+            body: JSON.stringify(review)
+        })
         console.log(data);
 
-    }
+
+
+     }
+
+
     return (
         <div className='flex justify-center mt-20'>
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -21,7 +40,7 @@ const Addreview = () => {
                             type="text"
                             placeholder='type your name'
                             className=" mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
-                            {...register("email", {
+                            {...register("name", {
                                 required: {
                                     value: true,
                                     message: "Name required"
@@ -31,9 +50,9 @@ const Addreview = () => {
                         />
                         <input
                             type="text"
-                            placeholder='type products name'
+                            placeholder='type location'
                             className=" mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
-                            {...register("email", {
+                            {...register("from", {
                                 required: {
                                     value: true,
                                     message: "Name required"
@@ -41,7 +60,19 @@ const Addreview = () => {
 
                             })}
                         />
-                        <textarea placeholder='descirbe your review' className='mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500' name="problem" id="" cols="4" rows="4"></textarea>
+                          <input
+                            type="text"
+                            placeholder='pste your imagelink'
+                            className=" mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                            {...register("img", {
+                                required: {
+                                    value: true,
+                                    message: "image link required"
+                                },
+
+                            })}
+                        />
+                        <textarea {...register("qoute")} placeholder='descirbe your review' className='mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500'  id="" cols="4" rows="4"></textarea>
                        
                         <div class="card-actions justify-end">
                         <input class="btn btn-primary" type="submit" />
