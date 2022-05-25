@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import auth from '../Fire key/Firekey';
 import CheckoutForm from './CheckoutForm';
 
@@ -23,14 +24,15 @@ const Checkout = () => {
 
     //   use parmas for getting id from path
     const { id } = useParams()
-
+ 
     //   use satate
     const [idwiseproduct, setIdwiseproduct] = useState({})
 
     useEffect(() => {
 
         fetch(`http://localhost:8000/products/${id}`, {
-            method: "GET"
+            method: "GET",
+
         })
             .then(res => res.json())
             .then(data => setIdwiseproduct(data))
@@ -48,7 +50,15 @@ const Checkout = () => {
             body: JSON.stringify({email : data.email , productname: data.productname}),
         })
         .then(res=> res.json())
-        .then(data => console.log(data), "get from here")
+        .then(data => {
+            Swal.fire({
+                icon: 'success',
+                title: 'congrats',
+                text: 'Order done',
+               
+              })
+              
+            console.log(data , "got from here")})
     }
 
 
@@ -63,6 +73,22 @@ const Checkout = () => {
                     <p className='text-left font-extrabold font-serif text-2xl mt-2 text-[#E81938]'> minimumQuantity : {idwiseproduct.minimumQuantity} </p>
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary">Listen</button>
+                    </div>
+                    <div>
+                        <form></form>
+
+                    {/* <input
+                            type="number"
+                            min={}
+                            className=" mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                            {...register("email", {
+                                required: {
+                                    value: true,
+                                    message: "Name required"
+                                },
+
+                            })}
+                        /> */}
                     </div>
                 </div>
             </div>
