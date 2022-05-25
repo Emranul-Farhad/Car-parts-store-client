@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useQuery } from 'react-query';
 import Swal from 'sweetalert2';
 
 
@@ -20,7 +21,7 @@ const Addproducts = () => {
             price : data.price,
             description : data.description
         }
-        if(data.qunatity  < 0  || data.minimumQuantity <0 || data.price < 0 ){
+        if(data.qunatity  < 0  || data.minimumQuantity <0 || data.price < 0  ){
             return (
                 Swal.fire({
                     icon: 'error',
@@ -30,8 +31,46 @@ const Addproducts = () => {
                 })
             )
         }
+        if(+data.qunatity < +data.minimumQuantity){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Check your quantity score',
+
+            })
+        }
+        fetch("http://localhost:8000/addproducts", {
+            method: 'POST', 
+            headers: {                    
+                'Content-Type': 'application/json' ,            
+            },
+            body: JSON.stringify(addpeoductsdetails),
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                return(
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'congrats..',
+                        text: 'adding products successfully',
+
         
-        console.log(data , addpeoductsdetails);
+                    })
+                ) 
+            }
+            else{
+                return(
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Check your quantity score',
+        
+                    })
+                )
+            }
+            console.log(data)})
+        console.log(data , addpeoductsdetails ,  "success get from here");
     }
 
     return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import Brandwiseshops from '../../Components/Brandwiseshop/Brandwiseshops';
+import Summury from '../../Components/HomepageComponents/Business summary/Summury';
 import Delivery from '../../Components/HomepageComponents/DeliverySystem/Delivery';
 import Hero from '../../Components/HomepageComponents/Hero';
 import Motorshow from '../../Components/HomepageComponents/MotorbikeShowcase/Motorshow';
@@ -27,7 +28,7 @@ const Home = () => {
             {/* products show case part start here motorbike parts */}
             <div className='mt-[130px]'>
                 <Motorshow></Motorshow>
-            </div> 
+            </div>
             {/* offer banner */}
             <div className='mt-[100px]'>
                 <Offerbanner></Offerbanner>
@@ -54,6 +55,11 @@ const Home = () => {
             <div>
                 <Reviews></Reviews>
             </div>
+            {/* busineess summury */}
+            <div className='mt-20'>
+                <Summury></Summury>
+            </div>
+            
         </div>
     );
 };
