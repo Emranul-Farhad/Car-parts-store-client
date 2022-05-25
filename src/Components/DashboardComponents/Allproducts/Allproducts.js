@@ -5,28 +5,29 @@ import Loading from '../../Loading/Loading';
 
 
 
-const Manageorders = () => {
+const Allproducts = () => {
 
-    const { data: orders, isLoading } = useQuery('orders', () =>
-        fetch('http://localhost:8000/allorders').then(res =>
-            res.json()
-        )
+    const { data: products ,  isLoading,  } = useQuery('products', () =>
+    fetch('http://localhost:8000/products').then(res =>
+      res.json()
     )
+  )
 
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+  if(isLoading){
+      return <Loading></Loading>
+  }
+
 
     return (
         <div>
-            <div class="row">
+             <div class="row">
                 <div class="col-md-12">
                     <div class="main-card mb-3 card">
-                        <div class="card-header"> Your Total orders is {orders.length}
+                        <div class="card-header"> Your Total products is {products.length}
                             <div class="btn-actions-pane-right">
                                 <div role="group" class="btn-group-sm btn-group">
                                     <button class="active btn btn-focus">Email</button>
-                                    <button class="btn btn-focus"> Your orders</button>
+                                    <button class="btn btn-focus"> Your products</button>
                                 </div>
                             </div>
                         </div>
@@ -43,8 +44,8 @@ const Manageorders = () => {
                                 </thead>
                                 <tbody>
 
-                                    {orders.length > 0 &&
-                                        orders?.map((product, index) =>
+                                    {products.length > 0 &&
+                                        products?.map((product, index) =>
 
                                             <>
 
@@ -58,16 +59,17 @@ const Manageorders = () => {
                                                                 </div>
                                                                 <div class="widget-content-left flex2">
                                                                     <div class="widget-heading">
-                                                                        {product?.email}  </div>
+                                                                        {product?.pname}  </div>
                                                                     <div class="widget-subheading opacity-7">  </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center"> {product?.productname} </td>
+                                                    <td class="text-center"> {product?.price} </td>
+                                                    <td class="text-center"> {product?._id} </td>
 
                                                     <td class="text-center">
-                                                        <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                                                        <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Delet</button>
                                                     </td>
                                                 </tr>
 
@@ -88,9 +90,8 @@ const Manageorders = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };
 
-export default Manageorders;
+export default Allproducts;

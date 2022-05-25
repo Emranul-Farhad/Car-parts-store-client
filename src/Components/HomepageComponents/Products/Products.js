@@ -35,7 +35,7 @@ const Products = () => {
                 }
             </div>
             <div>
-                <button onClick={()=> navigate('/products')} className='mt-20'>See more..</button>
+                <button onClick={()=> navigate('/products')} className='mt-[100px]'>See more..</button>
             </div>
         </div>
     );

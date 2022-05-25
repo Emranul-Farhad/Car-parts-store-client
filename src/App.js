@@ -22,6 +22,7 @@ import auth from './Components/Fire key/Firekey';
 import Loading from './Components/Loading/Loading';
 import Manageorders from './Components/DashboardComponents/Manage products/Manageproducts';
 import Addproducts from './Components/DashboardComponents/Addproducts/Addproducts';
+import Allproducts from './Components/DashboardComponents/Allproducts/Allproducts';
 
 
 
@@ -55,6 +56,7 @@ const [user, loading] = useAuthState(auth)
         <Route path='addreview' element={<Addreview></Addreview>} ></Route>
         <Route path='manage' element={<Manageorders></Manageorders>} ></Route>
         <Route path='addproducts' element={<Addproducts></Addproducts>} ></Route>
+        <Route path='allproducts' element={<Allproducts></Allproducts>} ></Route>
         </Route>
         {/* <Route path='*' element={<Notfound></Notfound>} ></Route> */}
       </Routes>}

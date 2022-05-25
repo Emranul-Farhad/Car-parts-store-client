@@ -1,262 +1,230 @@
-/* @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+@counter-style symbols {
+  system: cyclic;
+  symbols: "⬇️";
+  suffix: "      ";
+}
+
+@counter-style open {
+  system: cyclic;
+  symbols: "⬆️";
+  suffix: "      ";
+}
 
 :root {
-  --color: #3c3163;
-  --transition-time: 0.5s;
+  --gradient: linear-gradient(
+    135deg,
+    #0078d7,
+    #0076d4,
+    #0072cc,
+    #006cc1,
+    #0064b3,
+    #005ba3,
+    #005292,
+    #004982,
+    #004174,
+    #003b69,
+    #003761,
+    #00355e
+  );
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-
-a {
-  color: inherit;
+/* body,
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden !important;
 } */
 
-/* .cardds-wrapper {
-  display: grid;
-  justify-content: center;
+/* body {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
-  padding: 4rem;
-  margin: 0 auto;
-  width: max-content;
-} */
-
-/* .cardd {
-  font-family: 'Heebo';
-  --bg-filter-opacity: 0.5;
-  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
-  height: 20em;
-  width: 15em;
-  font-size: 1.5em;
-  color: white;
-  border-radius: 1em;
-  padding: 1em;
-  /*margin: 2em;*/
-  /* display: flex;
-  align-items: flex-end;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 0 5em -1em black;
-  transition: all, var(--transition-time);
-  position: relative;
-  overflow: hidden;
-  border: 10px solid #ccc;
-  text-decoration: none;
-} */
-
-/* .cardd:hover {
-  transform: rotate(0);
-} */
-
-/* .cardd h1 {
-  margin: 0;
-  font-size: 1.5em;
-  line-height: 1.2em;
-}
-
-.cardd p {
-  font-size: 0.75em;
-  font-family: 'Open Sans';
-  margin-top: 0.5em;
-  line-height: 2em;
-}
-
-.cardd .tags {
-  display: flex;
-}  */
-
-/* .cardd .tags .tag {
-  font-size: 0.75em;
-  background: rgba(255,255,255,0.5);
-  border-radius: 0.3rem;
-  padding: 0 0.5em;
-  margin-right: 0.5em;
-  line-height: 1.5em;
-  transition: all, var(--transition-time);
-}
-
-.cardd:hover .tags .tag {
-  background: var(--color);
-  color: white;
-}
-
-.cardd .date {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0.75em;
-  padding: 1em;
-  line-height: 1em;
-  opacity: .8;
-}
-
-.cardd:before, .cardd:after {
-  content: '';
-  transform: scale(0);
-  transform-origin: top left;
-  border-radius: 50%;
-  position: absolute;
-  left: -50%;
-  top: -50%;
-  z-index: -5;
-  transition: all, var(--transition-time);
-  transition-timing-function: ease-in-out;
-}
-
-.cardd:before {
-  background: #ddd;
-  width: 250%;
-  height: 250%;
-}
-
-.cardd:after {
-  background: white;
-  width: 200%;
-  height: 200%;
-}
-
-.cardd:hover {
-  color: var(--color);
-}
-
-.cardd:hover:before, .cardd:hover:after {
-  transform: scale(1);
-}
-
-.cardd-grid-space .num {
-  font-size: 3em;
-  margin-bottom: 1.2rem;
-  margin-left: 1rem;
-}
-
-.info {
-  font-size: 1.2em;
-  display: flex;
-  padding: 1em 3em;
-  height: 3em;
-}
-
-.info img {
-  height: 3em;
-  margin-right: 0.5em;
-}
-
-.info h1 {
-  font-size: 1em;
-  font-weight: normal;
-} */
-
-
-/* login form */
-
-
-.circles {
-  position: absolute;
-  top: 0;
-  left: 0;
+  justify-content: flex-start;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  min-height: 101vh;
+  margin: 0;
+  color: #333;
+} */
+
+#mz-accordion,
+#mz-accordion details,
+#mz-accordion h1,
+#mz-accordion ul,
+#mz-accordion li,
+#mz-accordion p {
+  all: unset;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.circles li {
+
+#mz-accordion ul {
+  list-style: none !important;
+}
+
+#mz-accordion li {
+  align-self: flex-start;
+  margin-bottom: 10px;
+  list-style: none !important;
+}
+
+#mz-accordion li:active {
+  transform: scale(0.98);
+}
+
+#mz-accordion {
+  margin-bottom: 60px;
+  left: 10px;
+  top: 20px;
+  width: 67%;
+  padding: 20px;
+}
+
+#mz-accordion details {
+  padding: 0px 20px;
+  left: 10px;
+  box-shadow: rgba(0, 57, 99, 0.18) 0px 7px 23px 0px;
+  width: 100%;
+  margin: 10px 0px 15px 0px;
+  border-radius: 7px;
+}
+
+#mz-accordion h1 {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill: transparent;
+  color: transparent;
+  font-size: 26pt;
+  line-height: 34pt;
+  margin: 10px -30px 40px -30px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-align: center;
+  text-decoration: underline 4px #eee;
+  max-width: 500px;
+}
+
+#mz-accordion summary {
+  width: 100%;
+  list-style-type: symbols;
+  list-style-position: outside;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#mz-accordion summary:hover {
+  cursor: pointer;
+}
+
+#mz-accordion summary::marker {
+  color: #0078d7;
+  font-size: 16pt;
+}
+
+#mz-accordion summary p {
+  position: relative;
+  width: auto;
+  flex-direction: row;
+  text-align: center;
+  font-size: 12pt;
+  line-height: 18pt;
+  font-weight: 600;
+  margin: 0;
+  padding-right: 10px;
+  color: #555;
+  user-select: none;
+}
+
+#mz-accordion summary p span {
+  background: #0078d755;
+  color: #222;
+  padding: 1px 7px;
+  border-radius: 3px;
+  margin-right: 6px;
+  margin-bottom: 2px;
+}
+
+#mz-accordion summary p::after {
   position: absolute;
-  display: block;
-  list-style: none;
-  width: 20px;
-  height: 20px;
-  /* background: rgba(255, 255, 255, 0.2); */
-  background: #E81938;
-  animation: animate 25s linear infinite;
-  bottom: -150px;
-}
-.circles li:nth-child(1) {
-  left: 25%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 0s;
+  display: none;
+  width: 70%;
+  height: 3px;
+  background: var(--gradient);
+  bottom: -7px;
+  border-radius: 100%;
+  content: "";
 }
 
-.circles li:nth-child(2) {
-  left: 10%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 2s;
-  animation-duration: 12s;
+#mz-accordion details p:nth-child(2) {
+  font-size: 10pt;
+  line-height: 20pt;
+  margin: 0;
+  padding: 0px 5px;
+  text-align: left;
 }
 
-.circles li:nth-child(3) {
-  left: 70%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 4s;
+#mz-accordion details[open] {
+  padding: 20px;
 }
 
-.circles li:nth-child(4) {
-  left: 40%;
-  width: 60px;
-  height: 60px;
-  animation-delay: 0s;
-  animation-duration: 18s;
+#mz-accordion details[open] summary {
+  list-style: open;
+  background: #eee;
+  margin-bottom: 15px;
 }
 
-.circles li:nth-child(5) {
-  left: 65%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 0s;
+#mz-accordion details[open] summary p {
+  bottom: 5px;
 }
 
-.circles li:nth-child(6) {
-  left: 75%;
-  width: 110px;
-  height: 110px;
-  animation-delay: 3s;
+#mz-accordion details[open] summary p::after {
+  display: flex;
 }
 
-.circles li:nth-child(7) {
-  left: 35%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 7s;
-}
-
-.circles li:nth-child(8) {
-  left: 50%;
-  width: 25px;
-  height: 25px;
-  animation-delay: 15s;
-  animation-duration: 45s;
-}
-
-.circles li:nth-child(9) {
-  left: 20%;
-  width: 15px;
-  height: 15px;
-  animation-delay: 2s;
-  animation-duration: 35s;
-}
-
-.circles li:nth-child(10) {
-  left: 85%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 0s;
-  animation-duration: 11s;
-}
-@keyframes animate {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    border-radius: 0;
+@supports not (list-style-type: symbols) {
+  #mz-accordion h1 {
+    background: unset;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+    color: #0077d6 !important;
   }
+  #mz-accordion summary {
+    list-style-type: none !important;
+  }
+}
 
-  100% {
-    transform: translateY(-1000px) rotate(720deg);
-    opacity: 0;
-    border-radius: 50%;
+@media (max-width: 460px) {
+  #mz-accordion summary p {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 375px) {
+  #mz-accordion h1 {
+    font-size: 22pt;
+    line-height: 30pt;
+  }
+}
+
+@media (pointer: coarse) {
+  #mz-accordion {
+    left: unset;
+    right: 10px;
+    list-style: none !important;
   }
 }
