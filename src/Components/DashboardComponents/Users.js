@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import Swal from 'sweetalert2';
 import auth from '../Fire key/Firekey';
+import Loading from '../Loading/Loading';
 
 
 const Users = () => {
@@ -30,7 +31,7 @@ const Users = () => {
   )
 
   if(isLoading){
-      return <p>laoding...</p>
+      return <Loading></Loading>
   }
 
     // make admin

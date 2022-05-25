@@ -1,4 +1,5 @@
-import React from 'react';
+// import { Rating, Typography } from '@mui/material';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 
@@ -7,30 +8,36 @@ const Addreview = () => {
     // react hook form
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
+
+    //    rating handel
+    // const [value, setValue] = useState(5);
+    
+    // console.log(value, "aa" );
+
     // submit handel
     const onSubmit = data => {
         const review = {
-            qoute : data.qoute,
+            qoute: data.qoute,
             name: data.name,
-            img : data.img ,
-            from : data.from
+            img: data.img,
+            from: data.from
         }
         console.log(review);
         const url = "http://localhost:8000/reviews"
-        fetch(url,{
-            method : "POST",
-            headers: {                    
-                'Content-Type': 'application/json' ,            
+        fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(review)
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
+            .then(res => res.json())
+            .then(data => console.log(data))
         console.log(data);
 
 
 
-     }
+    }
 
 
     return (
@@ -41,7 +48,7 @@ const Addreview = () => {
                         <input
                             type="text"
                             placeholder='type your name'
-                            className=" mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                            className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                             {...register("name", {
                                 required: {
                                     value: true,
@@ -53,7 +60,7 @@ const Addreview = () => {
                         <input
                             type="text"
                             placeholder='type location'
-                            className=" mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                            className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                             {...register("from", {
                                 required: {
                                     value: true,
@@ -62,10 +69,10 @@ const Addreview = () => {
 
                             })}
                         />
-                          <input
+                        <input
                             type="text"
                             placeholder='pste your imagelink'
-                            className=" mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                            className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                             {...register("img", {
                                 required: {
                                     value: true,
@@ -74,11 +81,12 @@ const Addreview = () => {
 
                             })}
                         />
-                        <textarea {...register("qoute")} placeholder='descirbe your review' className='mt-2 w-full text-base px-4 py-2 border-b border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500'  id="" cols="4" rows="4"></textarea>
-                       
+                        <textarea {...register("qoute")} placeholder='descirbe your review' className='mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500' id="" cols="4" rows="4"></textarea>
+                        {/* rating add */}                       
+
                         <div class="card-actions justify-end">
-                        <input class="btn btn-primary" type="submit" />
-                      
+                            <input class="btn bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100  font-semibold  shadow-lg cursor-pointer transition ease-in duration-500" type="submit" />
+
                         </div>
                     </form>
 

@@ -29,6 +29,10 @@ const Dashboard = () => {
 
                         { admin && <li><NavLink className="text-white uppercase font-bold" to='/dashboard/users'> All USERS </NavLink> </li>}
 
+                        { admin && <li><NavLink className="text-white uppercase font-bold" to='/dashboard/manage'> man.Products </NavLink> </li>}
+
+                        { admin && <li><NavLink className="text-white uppercase font-bold" to='/dashboard/addproducts'> addproducts </NavLink> </li>}
+
                           <li><NavLink className="text-white font-bold uppercase" to='/dashboard/myorders'>
                        My Orders </NavLink> </li>
 

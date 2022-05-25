@@ -17,6 +17,11 @@ import Myorders from './Components/DashboardComponents/Myorders';
 import Require from './Components/Require page/Require';
 import Addreview from './Components/DashboardComponents/Add review section/Addreview';
 import Notfound from './Pages/Notfound page/Notfound';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './Components/Fire key/Firekey';
+import Loading from './Components/Loading/Loading';
+import Manageorders from './Components/DashboardComponents/Manage products/Manageproducts';
+import Addproducts from './Components/DashboardComponents/Addproducts/Addproducts';
 
 
 
@@ -24,11 +29,17 @@ import Notfound from './Pages/Notfound page/Notfound';
 
 
 function App() {
+const [user, loading] = useAuthState(auth)
+
+
 
   return (
-    <div className="App">
+
+      <div className="App">
       <Nav></Nav>
-      <Routes>
+
+    { loading ? <Loading></Loading> :
+       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/blogs' element={<Blog></Blog>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
@@ -42,11 +53,16 @@ function App() {
         <Route path='profile' element={<Profile></Profile>} ></Route>
         <Route path='myorders' element={<Myorders></Myorders>} ></Route>
         <Route path='addreview' element={<Addreview></Addreview>} ></Route>
+        <Route path='manage' element={<Manageorders></Manageorders>} ></Route>
+        <Route path='addproducts' element={<Addproducts></Addproducts>} ></Route>
         </Route>
         {/* <Route path='*' element={<Notfound></Notfound>} ></Route> */}
-      </Routes>
+      </Routes>}
+
       <Footer></Footer>
     </div>
+  
+
   );
 }
 

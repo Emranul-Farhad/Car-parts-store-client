@@ -47,9 +47,7 @@ const Checkout = () => {
 
 
     const onSubmit = data => {
-
-        // const   = idwiseproduct.price * parseInt(data.number)
-       
+        // const   = idwiseproduct.price * parseInt(data.number) 
         fetch("http://localhost:8000/orders", {
             method: 'POST', 
             headers: {                    
@@ -59,12 +57,15 @@ const Checkout = () => {
         })
         .then(res=> res.json())
         .then(data => {
-            Swal.fire({
-                icon: 'success',
-                title: 'congrats',
-                text: 'Order done',
-               
-              })
+            if(data.insertedId){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'congrats',
+                    text: 'Order done',
+                   
+                  })
+            }
+           
               
             console.log(data , "got from here" , data.productname)})
     }

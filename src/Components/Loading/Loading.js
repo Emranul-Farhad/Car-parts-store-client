@@ -24,7 +24,7 @@ const Loading = () => {
 
     return (
         <div>
-            <div className='containers p-[-100px !important]'>
+            <div className='containers'>
                 <div ref={container} ></div>
             </div>
         </div>

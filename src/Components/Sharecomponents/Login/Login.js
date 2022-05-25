@@ -5,6 +5,7 @@ import { FcGoogle } from 'react-icons/fc'
 import auth from '../../Fire key/Firekey';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import useToken from '../../Token/useToken';
+import Loading from '../../Loading/Loading';
 
 
 
@@ -17,7 +18,7 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         loginuser,
-        loading,
+        loginloading,
         sigininerror,
       ] = useSignInWithEmailAndPassword(auth);
 
@@ -38,8 +39,6 @@ const Login = () => {
     }
 
 
-    
-
 
 //  navigate handel
 //  login user store 
@@ -52,8 +51,15 @@ let from = location.state?.from?.pathname || "/";
     }
 
 
+//    loading handel
+    if(googleloading || loginloading){
+        return <Loading></Loading>
+    }
+
+
     return (
-        <div>
+
+           <div>
             <div className="relative min-h-screen flex ">
                 <div className="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 bg-white">
                     <div className="sm:w-1/2 xl:w-3/5 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden text-white bg-no-repeat bg-cover relative"
@@ -206,6 +212,7 @@ let from = location.state?.from?.pathname || "/";
                 </div>
             </div>
         </div>
+
     );
 };
 

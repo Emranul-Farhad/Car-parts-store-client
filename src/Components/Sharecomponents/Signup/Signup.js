@@ -6,6 +6,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import auth from '../../Fire key/Firekey';
 import Swal from 'sweetalert2';
 import useToken from '../../Token/useToken';
+import Loading from '../../Loading/Loading';
 
 
 const Signup = () => {
@@ -17,7 +18,7 @@ const Signup = () => {
     const [
         createUserWithEmailAndPassword,
         signinuser,
-        loading,
+        signuploading,
         signinerror,
     ] = useCreateUserWithEmailAndPassword(auth);
 
@@ -68,6 +69,10 @@ const Signup = () => {
     }
 
 
+    // loading handel
+     if(googleloading || signuploading ){
+         return <Loading></Loading>
+     }
 
 
 
