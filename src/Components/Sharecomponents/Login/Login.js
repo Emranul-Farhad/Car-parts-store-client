@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
 import auth from '../../Fire key/Firekey';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -16,7 +16,7 @@ const Login = () => {
     // handel login with eamil passwords
     const [
         signInWithEmailAndPassword,
-        user,
+        loginuser,
         loading,
         sigininerror,
       ] = useSignInWithEmailAndPassword(auth);
@@ -40,8 +40,10 @@ const Login = () => {
 
 //  navigate handel
 //  login user store 
-     const [token] = useToken( user || googleloginuser) 
-    
+     const [token] = useToken( loginuser || googleloginuser) 
+    if(token){
+        Navigate('/')
+    }
 
 
     return (

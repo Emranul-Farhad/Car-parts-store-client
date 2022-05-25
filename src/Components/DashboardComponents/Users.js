@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
+import Swal from 'sweetalert2';
 import auth from '../Fire key/Firekey';
 
 
@@ -11,15 +13,59 @@ const Users = () => {
    const display = user?.displayName
   console.log(display);
 
-//    users get api
-   const [users , SetUsers] = useState([])
+//    users get api get all useer from databse
+//    const [users , SetUsers] = useState([])
 
-    useEffect(()=> {
-        fetch("http://localhost:8000/users" )
-        .then(res => res.json())
-        .then(data => SetUsers(data))
-    },[])
+//     useEffect(()=> {
+//         fetch("http://localhost:8000/users" )
+//         .then(res => res.json())
+//         .then(data => SetUsers(data))
+//     },[])
 
+
+    const { data:users,isLoading , refetch } = useQuery('users', () =>
+    fetch('http://localhost:8000/users').then(res =>
+      res.json()
+    )
+  )
+
+  if(isLoading){
+      return <p>laoding...</p>
+  }
+
+    // make admin
+    const makeadmin = (email)=> {
+        const url = `http://localhost:8000/users/admin/${email}`
+        fetch(url , {
+            method : "PUT",
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem("accesstoken")}`
+            }
+        })
+        .then(res => {
+            if(res.status === 403){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'you cannot make admin',
+                   
+                  })
+            }
+            return res.json()})
+        .then(data =>{
+
+           if(data.modifiedCount > 0){
+            Swal.fire({
+                icon: 'success',
+                title: `successfully make admin ${email}`,
+               
+              })
+            refetch()
+           }
+            console.log(data)})
+   
+        console.log(url);
+    }
 
 
     return (
@@ -43,8 +89,8 @@ const Users = () => {
                                             <thead>
                                             <tr>
                                                 <th class="text-center">#</th>
-                                                <th>Name</th>
-                                                <th class="text-center">Email</th>
+                                                <th>Email</th>
+                                           
                                                 <th class="text-center">Status</th>
                                                
                                             </tr>
@@ -68,16 +114,17 @@ const Users = () => {
                                                             </div>
                                                             <div class="widget-content-left flex2">
                                                                 <div class="widget-heading">
-                                                                    {user?.displayName}  </div>
+                                                                    {usera?.email}
+                                                                  </div>
                                                                 <div class="widget-subheading opacity-7">  </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="text-center"> {usera?.email} </td>
+                                                {/* <td class="text-center"> {usera?.email} </td> */}
                                                
                                                 <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                                                   { usera?.role === "admin" ? <p>already</p> :  <button onClick={ ()=> makeadmin(usera?.email) }  type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm"> Admin </button>}
                                                 </td>
                                             </tr> 
                                                         
