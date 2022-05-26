@@ -4,7 +4,7 @@
         "pname" : "6 Speed Gearbox",
         "description" : "6 Speed Gearbox A direct-shift gearbox, commonly abbreviated to DSG automatic gearbox, is an electronically controlled dual-clutch multiple-shaft manual gearbox in a transaxle design, without a conventional clutch pedal and with fully automatic or semi-manual control. In simple terms, a DSG is two separate manual gearboxes (and clutches) contained within one housing and working as one unit. By using two independent clutches, a DSG automatic gearbox can achieve faster shift times and eliminates the torque converter of a conventional epicyclic automatic transmission.",
         "price" : "6444",
-        "qunatity" : "",
+        "qunatity" : "1000",
         "minimumQuantity" : "100"
     },
     {
@@ -12,7 +12,7 @@
         "pname" : "Air Intake Pump",
         "description" : "The air then passes through the engine air filter, usually located in an “air box.” Pure “air” is a mixture of gases – 78% nitrogen, 21% oxygen, and trace amounts of other gases. Depending on location and season, air can also contain numerous contaminants, such as soot, pollen, dust, dirt, leaves, and insects. Some of these contaminants can be abrasive, causing excessive wear in engine parts, while others can clog the system.",
         "price" : "360.00",
-        "qunatity" : "",
+        "qunatity" : "5000",
         "minimumQuantity" : "1500"
     },
     {
@@ -20,7 +20,7 @@
         "pname" : "600 series Floor mount",
         "description" : "Tilton’s 600-Series pedal assemblies feature traditional fixed-mount master cylinder and balance bar technology and provide excellent performance at competitive prices. Pedal assemblies are available in floor-mount, firewall-mount and overhung configurations.",
         "price" : "4000",
-        "qunatity" : "",
+        "qunatity" : "2000",
         "minimumQuantity" : "1000"
     },
     {
@@ -28,7 +28,7 @@
         "pname" : "Star While RIM",
         "description" : "Black red 5 HOLE 15″ RIMS 18x8.0 VLF01188013MSB3 WHEELEGEND",
         "price" : "5600",
-        "qunatity" : "",
+        "qunatity" : "3000",
         "minimumQuantity" : "900"
     },
     {
@@ -36,7 +36,7 @@
         "pname" : "Helmet Arsenal",
         "description" : "The new STATUS Downhill/BMX helmet redefines the standards for what a mid-level full face helmet should be. The Status range has proved one of the most popular choices for Australian BMX racers, especially in the Youth sizes which have a dedicated smaller shell (compared to the Adult size helmets) to keep the weight down, yet with total full face protection. The Youth helmets come in at just under 1kg, which means that your young racer can maintain a level eyeline whilst riding/racing as they don't quite yet have the neck strength of an adult",
         "price" : "275",
-        "qunatity" : "",
+        "qunatity" : "4000",
         "minimumQuantity" : "1000"
     },
     {
@@ -44,7 +44,7 @@
         "pname" : "Aircraft 2 Helmet",
         "description" : "At just 850 grams, the 2019 Bell Sanction is one of the lightest full-face helmets available for the Australian race market. It's Bell's low-profile full-face aimed at dirt shredders and BMX racers who don’t need the more robust Full-9 or Transfer-9. The Sanction has quickly become the choice of BMX racers that prefer a smaller size and profile style of helmet. This helmet is perfect for those just starting BMX racing, young or old. ",
         "price" : "180",
-        "qunatity" : "",
+        "qunatity" : "5000",
         "minimumQuantity" : "2000"
     },
     {
@@ -52,7 +52,7 @@
         "pname" : "BMX GRADA",
         "description" : "Presented in youth sizing for the first time, the Fox Youth Rampage Helmet offers full face coverage to young park, BMX, downhill and enduro riders. It features a lightweight injection-molded ABS shell inspired by our iconic Rampage Pro Carbon Helmet. Injected mesh vent screens maintain superior ventilation while keeping the track grit from going down your gob. Not that you'll be behing hey champ!  The fully adjustable visor and proven D–ring closure system adds big-mountain function to this essential style.",
         "price" : "100",
-        "qunatity" : "",
+        "qunatity" : "4000",
         "minimumQuantity" : "13000"
     },
     {
@@ -60,7 +60,7 @@
         "pname" : "Aircraft Downhill",
         "description" : "The Aircraft is precision engineered with a Carbon/Kevlar Composite shell providing an exceptionally strong, yet ultra-lightweight design. 25 enhanced venting channels create the Active Cooling System; specifically designed to manage air flow and ventilate the entire helmet. The AIRCRAFT CARBON also features the MIPS Brain Protection System; a helmet-integrated, low-friction layer designed to reduce rotational motion transferred to the brain from angled impacts to the head.",
         "price" : "170",
-        "qunatity" : "",
+        "qunatity" : "5000",
         "minimumQuantity" : "1200"
     },
     {
@@ -68,7 +68,7 @@
         "pname" : "DRS Helmet Flat Black",
         "description" : "Flat black BMX helmet from Australian brand DRS. DRS Helmets are an affordable quality Australian Standards Approved BMX helmet.These feature great style and perfect fit. Each helmet comes with 2 x sets of pads.",
         "price" : "100",
-        "qunatity" : "",
+        "qunatity" : "4000",
         "minimumQuantity" : "2200"
     }
 ]

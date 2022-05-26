@@ -24,8 +24,8 @@ const Loading = () => {
 
     return (
         <div>
-            <div className='containers'>
-                <div ref={container} ></div>
+            <div className='containers flex justify-center'>
+                <div className='w-[50%]' ref={container} ></div>
             </div>
         </div>
     );

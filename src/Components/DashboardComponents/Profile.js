@@ -10,35 +10,45 @@ const Profile = () => {
 
 
     return (
-        <div>
-            <body>
-                <h1 className='mt-20 text-center font-extrabold text-2xl mr-[100px]'>welcome <span className='text-[#788CCF]'>{user?.displayName} </span> to your Profile !! </h1>
-                <div class="cardprofile">
-                    <div class="image">
-                      <img src="https://desklib.com/static/src/assets/images/v2/profile_3.svg" alt='p' />
-                    </div>
-                    <div class="details">
-                        <div class="center">
-                            <h1> {user?.displayName} <br /> <span> </span> </h1>
-                            <p> {user?.email} </p>
-                            {/* <ul>
-          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        </ul> */}
-                        </div>
-                    </div>
+        <div className='flex justify-center'>
+            <div class="cardprofile-container">
+                <span class="pro">ACTIVE</span>
+                <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+                <h3>Ricky Park</h3>
+                <h6>New York</h6>
+                <p>User interface designer and <br /> front-end developer</p>
+                <div class="buttons">
+                    <button class="primary">
+                        Message
+                    </button>
+                    <button class="primary ghost">
+                        Following
+                    </button>
                 </div>
-            </body>
+                <div class="skills">
+                    <h6>Skills</h6>
+                    <ul>
+                        <li>UI / UX</li>
+                        <li>Front End Development</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Node</li>
+                    </ul>
+                </div>
+            </div>
+
+
 
         </div>
+
     );
+
+
 };
 
 export default Profile;
 
 
 
-// 

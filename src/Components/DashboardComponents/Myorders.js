@@ -72,8 +72,8 @@ const Myorders = () => {
                 <thead>
                     <tr>
                         <th class="text-center">#</th>
-                        <th>Name</th>
-                        <th class="text-center">Email</th>
+                        <th>Email</th>
+                        <th class="text-center">products Name</th>
                         <th class="text-center">Status</th>
 
                     </tr>
