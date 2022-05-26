@@ -8,7 +8,7 @@ import Loading from '../../Loading/Loading';
 
 const Allproducts = () => {
 
-    const { data: products ,  isLoading, refetch  } = useQuery('products', () =>
+    const { data: products ,  isLoading, refetch } = useQuery('products', () =>
     fetch('http://localhost:8000/products').then(res =>
       res.json()
     )
@@ -20,38 +20,74 @@ const Allproducts = () => {
 
 
 //   deleting handel
-   const delet = id => {
-       const delet =   Swal.fire({
-        icon: 'question',
-        title: 'are you sure ?',
-        text: '',
+//    const delet = (id) => {
+//        const delet = Swal.fire({
+//         icon: 'question',
+//         title: 'are you sure ?',
+//         text: '',
+//     })
+//        if(delet){
+//         const url = `http://localhost:8000/products/${id}`
+//         console.log(url);
+//         fetch(url,{
+//             method : "DELETE"
+//         })
+//         .then(res=> res.json())
+//         .then(data => {
+//             if(data.deletedCount > 0 ){
+//                 Swal.fire({
+//                     icon: 'success',
+//                     title: 'deleted done',
+//                     text: ` deleted products ${id}` 
+//                 })
+               
+//             }
+//             refetch()
 
-    })
-       if(delet){
-        const url = `http://localhost:8000/products/${id}`
-        console.log(url);
-        fetch(url,{
-            method : "DELETE"
-        })
-        .then(res=> res.json())
-        .then(data => {
-            if(data.deletedCount > 0 ){
-                Swal.fire({
-                    icon: 'success',
-                    title: 'deleted done',
-                    text: ` deleted products ${id}`,
-
-                })
-            }
-
-            console.log(data)
-        })
-       }
+//             console.log(data)
+//         })
+//        }
      
 
-   }
+//    }
 
+const delet = id => {  
 
+   Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+}).then((result) => {
+    if (result.isConfirmed) {
+
+        const url = `http://localhost:8000/products/${id}`
+                console.log(url);
+                fetch(url,{
+                    method : "DELETE"
+                })
+                 .then(res=> res.json())
+                 .then(data => {
+                     if(data.deletedCount > 0 ){
+                       Swal.fire({
+                           icon: 'success',
+                            title: 'deleted done',
+                           text: ` deleted products ${id}` 
+                       })
+                       
+                    }
+                  refetch()
+        
+                   console.log(data)
+               })
+
+    }
+})
+
+}
     return (
         <div>
              <div class="row">
