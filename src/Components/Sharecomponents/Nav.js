@@ -21,9 +21,7 @@ const Nav = () => {
 
     const navlinks = <>
         <li> <NavLink className="text-white font-bold" to='/'> Home</NavLink> </li>
-        <li> <NavLink className="text-white font-bold" to='/review'> Review </NavLink> </li>
         <li> <NavLink className="text-white font-bold" to='/blogs' > Blogs </NavLink> </li>
-        <li> <NavLink className="text-white font-bold" to='/Contact us' > Contact us </NavLink></li>
       { user &&  <li> <NavLink className="text-white font-bold mr-1" to='/dashboard' > Dashboard </NavLink></li>}
         { user ?   <button onClick={logout} className="btn bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100  font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"> LOG OUT </button>:
             <li><NavLink className="text-white font-bold" to='/login'> login </NavLink></li>}
