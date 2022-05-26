@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Swal from 'sweetalert2';
 import Loading from '../../Loading/Loading';
 
 
@@ -7,7 +8,7 @@ import Loading from '../../Loading/Loading';
 
 const Allproducts = () => {
 
-    const { data: products ,  isLoading,  } = useQuery('products', () =>
+    const { data: products ,  isLoading, refetch  } = useQuery('products', () =>
     fetch('http://localhost:8000/products').then(res =>
       res.json()
     )
@@ -16,6 +17,39 @@ const Allproducts = () => {
   if(isLoading){
       return <Loading></Loading>
   }
+
+
+//   deleting handel
+   const delet = id => {
+       const delet =   Swal.fire({
+        icon: 'question',
+        title: 'are you sure ?',
+        text: '',
+
+    })
+       if(delet){
+        const url = `http://localhost:8000/products/${id}`
+        console.log(url);
+        fetch(url,{
+            method : "DELETE"
+        })
+        .then(res=> res.json())
+        .then(data => {
+            if(data.deletedCount > 0 ){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'deleted done',
+                    text: ` deleted products ${id}`,
+
+                })
+            }
+
+            console.log(data)
+        })
+       }
+     
+
+   }
 
 
     return (
@@ -69,7 +103,8 @@ const Allproducts = () => {
                                                     <td class="text-center"> {product?._id} </td>
 
                                                     <td class="text-center">
-                                                        <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Delet</button>
+                                                        <button  
+                                                        onClick={() => delet(product?._id)} type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Delet</button>
                                                     </td>
                                                 </tr>
 

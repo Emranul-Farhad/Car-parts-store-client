@@ -23,6 +23,7 @@ import Loading from './Components/Loading/Loading';
 import Manageorders from './Components/DashboardComponents/Manage products/Manageproducts';
 import Addproducts from './Components/DashboardComponents/Addproducts/Addproducts';
 import Allproducts from './Components/DashboardComponents/Allproducts/Allproducts';
+import Payment from './Components/DashboardComponents/Payment/Payment';
 
 
 
@@ -57,8 +58,9 @@ const [user, loading] = useAuthState(auth)
         <Route path='manage' element={<Manageorders></Manageorders>} ></Route>
         <Route path='addproducts' element={<Addproducts></Addproducts>} ></Route>
         <Route path='allproducts' element={<Allproducts></Allproducts>} ></Route>
+        <Route path='payment/:id' element={<Payment></Payment>} ></Route>
         </Route>
-        {/* <Route path='*' element={<Notfound></Notfound>} ></Route> */}
+        <Route path='*' element={<Notfound></Notfound>} ></Route>
       </Routes>}
 
       <Footer></Footer>

@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import auth from '../Fire key/Firekey';
 
@@ -104,7 +104,9 @@ const Myorders = () => {
                                     <td class="text-center"> {order?.productname} </td>
 
                                     <td class="text-center">
-                                        <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                                        <NavLink to={`/dashboard/payment/${order?._id}`}  className="btn btn-primary btn-sm" >pay</NavLink>
+                                        
+                                        {/* <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Payment</button> */}
                                     </td>
                                 </tr>
 

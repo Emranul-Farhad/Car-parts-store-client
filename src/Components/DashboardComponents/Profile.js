@@ -15,7 +15,7 @@ const Profile = () => {
                 <h1 className='mt-20 text-center font-extrabold text-2xl mr-[100px]'>welcome <span className='text-[#788CCF]'>{user?.displayName} </span> to your Profile !! </h1>
                 <div class="cardprofile">
                     <div class="image">
-                        <img src="https://desklib.com/static/src/assets/images/v2/profile_3.svg" alt='p' />
+                      <img src="https://desklib.com/static/src/assets/images/v2/profile_3.svg" alt='p' />
                     </div>
                     <div class="details">
                         <div class="center">
