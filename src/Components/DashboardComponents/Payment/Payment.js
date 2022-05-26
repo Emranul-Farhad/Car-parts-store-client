@@ -44,16 +44,26 @@ const Payment = () => {
                         <p className='font-bold text-left'> Your orderd products is <br />
                             <span className='text-[#EF2D37] font-extrabold text-2xl'>  {products?.productname}  </span> </p>
                         <div class="card-actions justify-end">
-                            <button class="btn btn-primary">Buy Now</button>
+                          
                         </div>
                     </div>
                 </div>
             </div>
-            <Elements stripe={stripePromise}>
-                <CheckoutForm />
-            </Elements>
+            <div className='flex justify-center my-20'>
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <div class="card-body">
+
+                        <Elements stripe={stripePromise}>
+                            <CheckoutForm />
+                        </Elements>
+
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
 
 export default Payment;
+
+

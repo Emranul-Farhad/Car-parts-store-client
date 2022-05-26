@@ -11,7 +11,7 @@ import Signup from './Components/Sharecomponents/Signup/Signup';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Users from './Components/DashboardComponents/Users';
 import Allproductsshow from './Components/AllproductsShow/Allproductsshow';
-import Checkout from './Components/Checkoutpages/Checkout';
+// import Checkout from './Components/Checkoutpages/Checkout';
 import Profile from './Components/DashboardComponents/Profile';
 import Myorders from './Components/DashboardComponents/Myorders';
 import Require from './Components/Require page/Require';
@@ -24,6 +24,7 @@ import Manageorders from './Components/DashboardComponents/Manage products/Manag
 import Addproducts from './Components/DashboardComponents/Addproducts/Addproducts';
 import Allproducts from './Components/DashboardComponents/Allproducts/Allproducts';
 import Payment from './Components/DashboardComponents/Payment/Payment';
+import Checkout from './Components/Checkoutpages/Checkout';
 
 
 
@@ -47,7 +48,7 @@ const [user, loading] = useAuthState(auth)
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<Signup></Signup>} ></Route>
         <Route path='/products' element={<Allproductsshow></Allproductsshow>} ></Route>
-        <Route path='/checkout/:id' element={ <Require><Checkout></Checkout></Require> } ></Route> 
+        <Route path='/checkout/:id' element={ <Require> <Checkout></Checkout> </Require> } ></Route> 
 
 
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
