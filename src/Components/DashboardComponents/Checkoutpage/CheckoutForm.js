@@ -21,7 +21,7 @@ const CheckoutForm = () => {
 
     // sendd money in stripe
     useEffect(() => {
-        fetch('https://thawing-beach-36415.herokuapp.com/create-payment-intent', {
+        fetch('http://localhost:8000/create-payment-intent', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

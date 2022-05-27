@@ -26,6 +26,7 @@ import Allproducts from './Components/DashboardComponents/Allproducts/Allproduct
 import Payment from './Components/DashboardComponents/Payment/Payment';
 import Checkout from './Components/Checkoutpages/Checkout';
 import Purchase from './Components/Portfolio';
+import Portfolio from './Components/Portfolio';
 
 
 
@@ -34,7 +35,7 @@ import Purchase from './Components/Portfolio';
 
 
 function App() {
-const [user, loading] = useAuthState(auth)
+// const [user, loading] = useAuthState(auth)
 
 
 
@@ -43,10 +44,11 @@ const [user, loading] = useAuthState(auth)
       <div className="App">
       <Nav></Nav>
 
-    { loading ? <Loading></Loading> :
+   
        <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/blogs' element={<Blog></Blog>} ></Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<Signup></Signup>} ></Route>
         <Route path='/products' element={<Allproductsshow></Allproductsshow>} ></Route>
@@ -54,7 +56,7 @@ const [user, loading] = useAuthState(auth)
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
         <Route path='users' element={<Users></Users>} ></Route>
         <Route path='profile' element={<Profile></Profile>} ></Route>
-        <Route path='myorders' element={<Myorders></Myorders>} ></Route>
+        <Route index element={<Myorders></Myorders>} ></Route>
         <Route path='addreview' element={<Addreview></Addreview>} ></Route>
         <Route path='manage' element={<Manageorders></Manageorders>} ></Route>
         <Route path='addproducts' element={<Addproducts></Addproducts>} ></Route>
@@ -62,7 +64,7 @@ const [user, loading] = useAuthState(auth)
         <Route path='payment/:id' element={<Payment></Payment>} ></Route>
         </Route>
         <Route path='*' element={<Notfound></Notfound>} ></Route>
-      </Routes>}
+      </Routes>
 
       <Footer></Footer>
     </div>

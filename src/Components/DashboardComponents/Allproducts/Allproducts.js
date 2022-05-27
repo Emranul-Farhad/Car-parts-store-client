@@ -9,7 +9,7 @@ import Loading from '../../Loading/Loading';
 const Allproducts = () => {
 
     const { data: products, isLoading, refetch } = useQuery('products', () =>
-        fetch('https://thawing-beach-36415.herokuapp.com/products').then(res =>
+        fetch('http://localhost:8000/products').then(res =>
             res.json()
         )
     )
@@ -27,7 +27,7 @@ const Allproducts = () => {
     //         text: '',
     //     })
     //        if(delet){
-    //         const url = `https://thawing-beach-36415.herokuapp.com/products/${id}`
+    //         const url = `http://localhost:8000/products/${id}`
     //         console.log(url);
     //         fetch(url,{
     //             method : "DELETE"
@@ -64,7 +64,7 @@ const Allproducts = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                const url = `https://thawing-beach-36415.herokuapp.com/products/${id}`
+                const url = `http://localhost:8000/products/${id}`
                 console.log(url);
                 fetch(url, {
                     method: "DELETE"
@@ -154,10 +154,10 @@ const Allproducts = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div class="d-block text-center card-footer">
+                        {/* <div class="d-block text-center card-footer">
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                             <button class="btn-wide btn btn-success">Save</button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

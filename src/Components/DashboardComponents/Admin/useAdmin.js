@@ -10,7 +10,7 @@ const useAdmin = (user) => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            const url = `https://thawing-beach-36415.herokuapp.com/users/${email}`
+            const url = `http://localhost:8000/users/${email}`
             fetch(url, {
                 method: "GET",
                 headers: {

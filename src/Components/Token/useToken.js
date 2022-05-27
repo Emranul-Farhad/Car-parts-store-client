@@ -14,7 +14,8 @@ const useToken = (user) => {
         const email = user?.user?.email;
         const currentuser = { email: email }
         if (email) {
-            const url = `https://thawing-beach-36415.herokuapp.com/users/${email}`
+            const url = `http://localhost:8000/users/${email}`
+            console.log(url , "email check")
             fetch(url, {
                 method: "PUT",
                 headers: {
@@ -27,7 +28,7 @@ const useToken = (user) => {
                     const getToken = data.token;
                     localStorage.setItem("accesstoken", getToken)
                     setToken(getToken)
-                    console.log(data)
+                    console.log(data, " token email")
                 })
 
         }

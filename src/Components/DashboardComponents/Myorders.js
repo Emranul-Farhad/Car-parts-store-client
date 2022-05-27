@@ -18,7 +18,7 @@ const Myorders = () => {
         const email = user?.email
         console.log(email);
         if (email) {
-            const url = (`https://thawing-beach-36415.herokuapp.com/orders?email=${email}`)
+            const url = (`http://localhost:8000/orders?email=${email}`)
             console.log(url);
             fetch(url, {
                 method: "GET",
@@ -120,10 +120,7 @@ const Myorders = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div class="d-block text-center card-footer">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                            <button class="btn-wide btn btn-success">Save</button>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

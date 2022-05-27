@@ -1,6 +1,7 @@
 // import { Rating, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 
 
@@ -23,7 +24,7 @@ const Addreview = () => {
             from: data.from
         }
         console.log(review);
-        const url = "https://thawing-beach-36415.herokuapp.com/reviews"
+        const url = "http://localhost:8000/reviews"
         fetch(url, {
             method: "POST",
             headers: {
@@ -32,7 +33,14 @@ const Addreview = () => {
             body: JSON.stringify(review)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if(data.insertedId){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfull added',
+                    })
+                }
+                console.log(data)})
         console.log(data);
 
 

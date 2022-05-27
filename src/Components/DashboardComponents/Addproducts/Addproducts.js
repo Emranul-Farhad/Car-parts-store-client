@@ -39,7 +39,7 @@ const Addproducts = () => {
 
             })
         }
-        fetch("https://thawing-beach-36415.herokuapp.com/addproducts", {
+        fetch("http://localhost:8000/addproducts", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ const Addproducts = () => {
 
                         <input
                             type="number"
-                            placeholder='type your qunatity'
+                            placeholder='type your stock qunatity'
                             className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-900"
                             {...register("qunatity", {
                                 required: {

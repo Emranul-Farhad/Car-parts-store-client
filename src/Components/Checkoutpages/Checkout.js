@@ -27,7 +27,7 @@ const Checkout = () => {
 
 
     const { data: idwiseproduct, isLoading, refetch } = useQuery([id, 'products'], () =>
-        fetch(`https://thawing-beach-36415.herokuapp.com/products/${id}`).then(res =>
+        fetch(`http://localhost:8000/products/${id}`).then(res =>
             res.json()
         )
     )
@@ -50,7 +50,7 @@ const Checkout = () => {
         }
         console.log(event.target, event.target);
 
-        fetch("https://thawing-beach-36415.herokuapp.com/orders", {
+        fetch("http://localhost:8000/orders", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

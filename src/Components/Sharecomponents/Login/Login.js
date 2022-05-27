@@ -41,11 +41,12 @@ const Login = () => {
 
 
 //  navigate handel
-//  login user store 
+//  login user store
+const [token] = useToken( loginuser || googleloginuser)  
 const location = useLocation()
 const navigate = useNavigate()
 let from = location.state?.from?.pathname || "/";
-     const [token] = useToken( loginuser || googleloginuser) 
+    
     if(token){
         navigate(from, { replace: true });
     }

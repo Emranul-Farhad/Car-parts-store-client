@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Car parts Manufecture Site [Create React App](https://github.com/facebook/create-react-app).
 
 
 <!-- what i will use -->
@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Lottie animation
 * React spring Animaton
 * React counter 
-* Tailwind componets for login sign up
+* Tailwind componets for login sign up page
 * React Form 
 * React Icons
 * React toastfy

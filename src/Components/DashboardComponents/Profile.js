@@ -24,10 +24,14 @@ const Profile = () => {
             skill: data.skill,
             skillf: data.skillf,
             skillv: data.skillv,
-            bio: data.bio
+            bio: data.bio,
+            phone: data.phone,
+            location: data.location,
+            social: data.social
 
         }
-        const url = "https://thawing-beach-36415.herokuapp.com/profile"
+        console.log(data)
+        const url = "http://localhost:8000/profile"
         fetch(url, {
             method: 'POST',
             headers: {
@@ -39,10 +43,10 @@ const Profile = () => {
             .then(data => console.log(data))
     }
 
-    // https://thawing-beach-36415.herokuapp.com/orders?email=${email}`
+    // http://localhost:8000/orders?email=${email}`
 
     const { data: profiles, isLoading } = useQuery('repoData', () =>
-        fetch(`https://thawing-beach-36415.herokuapp.com/profile?email=${user?.email}`).then(res =>
+        fetch(`http://localhost:8000/profile?email=${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -64,14 +68,16 @@ const Profile = () => {
                         <h3 className='text-gray-500'> {user?.displayName}  </h3>}
 
                     <h6 className='text-gray-500'> {user?.email} </h6>
-                    <p className='mt-3' alt={profiles?.bio?.slice(0, 50)} > {profiles?.bio} </p>
+                    <p className='mt-3' alt={profiles?.bio} > Education : {profiles?.bio?.slice(0, 30)+".." } </p>
+                    <p className='mt-3' alt={profiles?.location} > Location : {profiles?.location?.slice(0, 30)+ ".." } </p>
+                    <p className='mt-3' alt={profiles?.phone} > number : {profiles?.phone?.slice(0, 11)} </p>
                     <div class="buttons mt-3">
-                        <button class="primary mx-1">
-                            Message
-                        </button>
-                        <button class="primary ghost">
+                    <a href={profiles?.social} >
+                    <button  class="primary ghost">
                             Following
                         </button>
+                    </a>
+                       
                     </div>
                     <div class="skills">
                         <h6>Skills</h6>
@@ -131,7 +137,7 @@ const Profile = () => {
                             />
                             <input
                                 type="text"
-                                placeholder='type skill'
+                                placeholder='type skill 1'
                                 className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                                 {...register("skillo", {
                                     required: {
@@ -143,7 +149,7 @@ const Profile = () => {
                             />
                             <input
                                 type="text"
-                                placeholder='type skill'
+                                placeholder='type skill 2'
                                 className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                                 {...register("skillt", {
                                     required: {
@@ -155,7 +161,7 @@ const Profile = () => {
                             />
                             <input
                                 type="text"
-                                placeholder='type skillh'
+                                placeholder='type skillh 3'
                                 className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                                 {...register("skill", {
                                     required: {
@@ -167,7 +173,7 @@ const Profile = () => {
                             />
                             <input
                                 type="text"
-                                placeholder='type skill'
+                                placeholder='type skill 4'
                                 className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                                 {...register("skillf", {
                                     required: {
@@ -179,7 +185,7 @@ const Profile = () => {
                             />
                             <input
                                 type="text"
-                                placeholder='type skill'
+                                placeholder='type your skill 5'
                                 className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
                                 {...register("skillv", {
                                     required: {
@@ -189,7 +195,55 @@ const Profile = () => {
 
                                 })}
                             />
-                            <textarea {...register("bio")} placeholder='descirbe your review' className='mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500' id="" cols="4" rows="4"></textarea>
+                            <input
+                                type="phone"
+                                placeholder='type phone number'
+                                className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                                {...register("phone", {
+                                    required: {
+                                        value: true,
+                                        message: "Name required"
+                                    },
+
+                                })}
+                            />
+                            <input
+                                type="text"
+                                placeholder='type location '
+                                className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                                {...register("location", {
+                                    required: {
+                                        value: true,
+                                        message: "Name required"
+                                    },
+
+                                })}
+                            />
+                             <input
+                                type="text"
+                                placeholder='place your linkedin link'
+                                className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                                {...register("social", {
+                                    required: {
+                                        value: true,
+                                        message: "Name required"
+                                    },
+
+                                })}
+                            />
+                             <input
+                                type="text"
+                                placeholder='type your Education name'
+                                className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
+                                {...register("bio", {
+                                    required: {
+                                        value: true,
+                                        message: "Name required"
+                                    },
+
+                                })}
+                            />
+                            {/* <textarea {...register("bio")} placeholder='descirbe your review' className='mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500' id="" cols="4" rows="4"></textarea> */}
                             {/* rating add */}
 
                             <div class="card-actions justify-end">

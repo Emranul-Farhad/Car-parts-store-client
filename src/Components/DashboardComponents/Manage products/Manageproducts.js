@@ -8,7 +8,7 @@ import Loading from '../../Loading/Loading';
 const Manageorders = () => {
 
     const { data: orders, isLoading } = useQuery('orders', () =>
-        fetch('https://thawing-beach-36415.herokuapp.com/allorders').then(res =>
+        fetch('http://localhost:8000/allorders').then(res =>
             res.json()
         )
     )
@@ -81,10 +81,7 @@ const Manageorders = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div class="d-block text-center card-footer">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                            <button class="btn-wide btn btn-success">Save</button>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
