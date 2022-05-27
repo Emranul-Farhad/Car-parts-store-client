@@ -125,7 +125,7 @@ const Myorders = () => {
                                 <tbody>
 
                                     {orders.length > 0 &&
-                                        orders?.map((order, index) =>
+                                        orders?.slice(0).reverse().map((order, index) =>
 
                                             <>
 

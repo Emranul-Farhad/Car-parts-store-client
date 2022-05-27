@@ -44,7 +44,7 @@ const Manageorders = () => {
                                 <tbody>
 
                                     {orders.length > 0 &&
-                                        orders?.map((product, index) =>
+                                        orders?.slice(0).reverse().map((product, index) =>
 
                                             <>
 

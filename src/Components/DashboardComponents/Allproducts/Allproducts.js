@@ -116,7 +116,7 @@ const Allproducts = () => {
                                 <tbody>
 
                                     {products.length > 0 &&
-                                        products?.map((product, index) =>
+                                        products?.slice(0).reverse().map((product, index) =>
 
                                             <>
 

@@ -93,7 +93,7 @@ const Reviews = () => {
           spaceBetween={20}
           slidesPerView={1}
           centeredslide="true"
-          key={reviews.length}
+          key={reviews.length - 1 }
           autoplay={true}
           breakpoints={{
             520: {
@@ -118,7 +118,7 @@ const Reviews = () => {
           {
 
 
-            reviews?.map((review, index) => (
+            reviews?.slice(0).reverse().map((review, index) => (
               <SwiperSlide key={index} >
                 <ReviewsCard review={review} ></ReviewsCard>
               </SwiperSlide>

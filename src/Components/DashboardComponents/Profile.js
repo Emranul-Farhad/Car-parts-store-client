@@ -68,18 +68,19 @@ const Profile = () => {
                         <h3 className='text-gray-500'> {user?.displayName}  </h3>}
 
                      <h6 className='text-gray-500'> {user?.email} </h6>
-                    <p className='mt-3' alt={profiles?.bio} > Education : {profiles?.bio?.slice(0, 30) + ".."} </p>
+
+                  { profiles?.bio &&  <p className='mt-3' alt={profiles?.bio} > Education : {profiles?.bio?.slice(0, 30) + ".."} </p>}
 
                    { profiles?.location && <p className='mt-3' alt={profiles?.location} > Location : {profiles?.location?.slice(0, 30) + ".."} </p>}
 
                  { profiles?.phone &&   <p className='mt-3' alt={profiles?.phone} > number : {profiles?.phone?.slice(0, 11)} </p>}
 
                     <div class="buttons mt-3">
-                        <a href={profiles?.social} >
-                            <button class="primary ghost">
+                        
+                            {/* <button  class="primary ghost">
                                 Following
-                            </button>
-                        </a>
+                            </button> */}
+                        <a href={profiles?.social} target='blank' className='primary ghost'> Linkedin  </a>
 
                     </div>
                     <div class="skills">
