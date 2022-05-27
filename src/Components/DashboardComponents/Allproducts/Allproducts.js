@@ -9,7 +9,7 @@ import Loading from '../../Loading/Loading';
 const Allproducts = () => {
 
     const { data: products, isLoading, refetch } = useQuery('products', () =>
-        fetch('http://localhost:8000/products').then(res =>
+        fetch('https://thawing-beach-36415.herokuapp.com/products').then(res =>
             res.json()
         )
     )
@@ -27,7 +27,7 @@ const Allproducts = () => {
     //         text: '',
     //     })
     //        if(delet){
-    //         const url = `http://localhost:8000/products/${id}`
+    //         const url = `https://thawing-beach-36415.herokuapp.com/products/${id}`
     //         console.log(url);
     //         fetch(url,{
     //             method : "DELETE"
@@ -64,7 +64,7 @@ const Allproducts = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                const url = `http://localhost:8000/products/${id}`
+                const url = `https://thawing-beach-36415.herokuapp.com/products/${id}`
                 console.log(url);
                 fetch(url, {
                     method: "DELETE"
@@ -88,7 +88,7 @@ const Allproducts = () => {
         })
 
     }
-    
+
     return (
         <div>
             <div class="row">

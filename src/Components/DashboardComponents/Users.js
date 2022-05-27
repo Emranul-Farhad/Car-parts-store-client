@@ -18,14 +18,14 @@ const Users = () => {
     //    const [users , SetUsers] = useState([])
 
     //     useEffect(()=> {
-    //         fetch("http://localhost:8000/users" )
+    //         fetch("https://thawing-beach-36415.herokuapp.com/users" )
     //         .then(res => res.json())
     //         .then(data => SetUsers(data))
     //     },[])
 
 
     const { data: usera, isLoading, refetch } = useQuery('users', () =>
-        fetch('http://localhost:8000/users').then(res =>
+        fetch('https://thawing-beach-36415.herokuapp.com/users').then(res =>
             res.json()
         )
     )
@@ -36,7 +36,7 @@ const Users = () => {
 
     // make admin
     const makeadmin = (email) => {
-        const url = `http://localhost:8000/users/admin/${email}`
+        const url = `https://thawing-beach-36415.herokuapp.com/users/admin/${email}`
         fetch(url, {
             method: "PUT",
             headers: {
@@ -141,8 +141,8 @@ const Users = () => {
                                     </tbody>
                                 </table>
                             </div>
-                           
-                       
+
+
                         </div>
                     </div>
                 </div>

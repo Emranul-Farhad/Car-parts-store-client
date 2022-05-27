@@ -31,7 +31,7 @@ const Profile = () => {
 
         }
         console.log(data)
-        const url = "http://localhost:8000/profile"
+        const url = "https://thawing-beach-36415.herokuapp.com/profile"
         fetch(url, {
             method: 'POST',
             headers: {
@@ -43,10 +43,10 @@ const Profile = () => {
             .then(data => console.log(data))
     }
 
-    // http://localhost:8000/orders?email=${email}`
+    // https://thawing-beach-36415.herokuapp.com/orders?email=${email}`
 
     const { data: profiles, isLoading } = useQuery('repoData', () =>
-        fetch(`http://localhost:8000/profile?email=${user?.email}`).then(res =>
+        fetch(`https://thawing-beach-36415.herokuapp.com/profile?email=${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -68,16 +68,16 @@ const Profile = () => {
                         <h3 className='text-gray-500'> {user?.displayName}  </h3>}
 
                     <h6 className='text-gray-500'> {user?.email} </h6>
-                    <p className='mt-3' alt={profiles?.bio} > Education : {profiles?.bio?.slice(0, 30)+".." } </p>
-                    <p className='mt-3' alt={profiles?.location} > Location : {profiles?.location?.slice(0, 30)+ ".." } </p>
+                    <p className='mt-3' alt={profiles?.bio} > Education : {profiles?.bio?.slice(0, 30) + ".."} </p>
+                    <p className='mt-3' alt={profiles?.location} > Location : {profiles?.location?.slice(0, 30) + ".."} </p>
                     <p className='mt-3' alt={profiles?.phone} > number : {profiles?.phone?.slice(0, 11)} </p>
                     <div class="buttons mt-3">
-                    <a href={profiles?.social} >
-                    <button  class="primary ghost">
-                            Following
-                        </button>
-                    </a>
-                       
+                        <a href={profiles?.social} >
+                            <button class="primary ghost">
+                                Following
+                            </button>
+                        </a>
+
                     </div>
                     <div class="skills">
                         <h6>Skills</h6>
@@ -219,7 +219,7 @@ const Profile = () => {
 
                                 })}
                             />
-                             <input
+                            <input
                                 type="text"
                                 placeholder='place your linkedin link'
                                 className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"
@@ -231,7 +231,7 @@ const Profile = () => {
 
                                 })}
                             />
-                             <input
+                            <input
                                 type="text"
                                 placeholder='type your Education name'
                                 className=" mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500"

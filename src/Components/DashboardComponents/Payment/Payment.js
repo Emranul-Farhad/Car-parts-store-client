@@ -21,7 +21,7 @@ const Payment = () => {
 
     // usequery
     const { data: products, isLoading } = useQuery([id, 'payment'], () =>
-        fetch(`http://localhost:8000/payment/${id}`, {
+        fetch(`https://thawing-beach-36415.herokuapp.com/payment/${id}`, {
             "method": "GET",
         })
             .then(res =>

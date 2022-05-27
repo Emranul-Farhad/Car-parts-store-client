@@ -168,7 +168,7 @@ const Signup = () => {
                                             }
                                         })}
                                     />
-                                    <label className="label absolute font-bold">
+                                    <label className="mt-2 label absolute font-bold">
                                         {errors.name?.type === 'minLength' && <span className="label-text-alt text-[red] "> {errors.name.message} </span>}
                                         {errors.name?.type === 'required' && <span className="label-text-alt text-[red] "> {errors.name.message} </span>}
                                     </label>
@@ -181,7 +181,7 @@ const Signup = () => {
                                             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                     </div>
-                                    <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
+                                    <label className=" ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
                                     <input
                                         type="email"
                                         placeholder="Type your Email"
@@ -197,7 +197,7 @@ const Signup = () => {
                                             }
                                         })}
                                     />
-                                    <label className="label absolute left-3 font-bold mt-0">
+                                    <label className="mt-2 label absolute left-3 font-bold ">
                                         {errors.email?.type === 'pattern' && <span className="label-text-alt text-[red] "> {errors.email.message} </span>}
                                         {errors.email?.type === 'required' && <span className="label-text-alt text-[red] "> {errors.email.message} </span>}
                                     </label>
@@ -226,7 +226,7 @@ const Signup = () => {
                                             }
                                         })}
                                     />
-                                    <label className="label absolute font-bold mt-0">
+                                    <label className="label absolute font-bold mt-2">
                                         {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-600  "> {errors.password.message} </span>}
                                         {errors.password?.type === 'required' && <span className="label-text-alt text-[#f00] "> {errors.password.message} </span>}
                                     </label>
@@ -255,7 +255,7 @@ const Signup = () => {
                                             }
                                         })}
                                     />
-                                    <label className="label absolute font-bold  mt-0">
+                                    <label className="label absolute font-bold  mt-2">
                                         {errors.confirmpassword?.type === 'pattern' && <span className="label-text-alt text-red-600  "> {errors.password.message} </span>}
                                         {errors.confirmpassword?.type === 'required' && <span className="label-text-alt text-[#f00] "> {errors.password.message} </span>}
                                     </label>

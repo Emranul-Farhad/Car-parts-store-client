@@ -14,8 +14,8 @@ const useToken = (user) => {
         const email = user?.user?.email;
         const currentuser = { email: email }
         if (email) {
-            const url = `http://localhost:8000/users/${email}`
-            console.log(url , "email check")
+            const url = `https://thawing-beach-36415.herokuapp.com/users/${email}`
+            console.log(url, "email check")
             fetch(url, {
                 method: "PUT",
                 headers: {

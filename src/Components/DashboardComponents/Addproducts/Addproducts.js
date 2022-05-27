@@ -39,7 +39,7 @@ const Addproducts = () => {
 
             })
         }
-        fetch("http://localhost:8000/addproducts", {
+        fetch("https://thawing-beach-36415.herokuapp.com/addproducts", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -22,7 +22,7 @@ const Myorders = () => {
         const email = user?.email
         console.log(email);
         if (email) {
-            const url = (`http://localhost:8000/orders?email=${email}`)
+            const url = (`https://thawing-beach-36415.herokuapp.com/orders?email=${email}`)
             console.log(url);
             fetch(url, {
                 method: "GET",
@@ -67,7 +67,7 @@ const Myorders = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                const url = `http://localhost:8000/orderpro/${id}`
+                const url = `https://thawing-beach-36415.herokuapp.com/orderpro/${id}`
                 console.log(url, "delet");
                 fetch(url, {
                     method: "DELETE"
@@ -92,7 +92,7 @@ const Myorders = () => {
 
     }
 
-    
+
 
     console.log(orders);
 

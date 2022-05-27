@@ -24,7 +24,7 @@ const Addreview = () => {
             from: data.from
         }
         console.log(review);
-        const url = "http://localhost:8000/reviews"
+        const url = "https://thawing-beach-36415.herokuapp.com/reviews"
         fetch(url, {
             method: "POST",
             headers: {
@@ -34,13 +34,14 @@ const Addreview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Successfull added',
                     })
                 }
-                console.log(data)})
+                console.log(data)
+            })
         console.log(data);
 
 

@@ -49,7 +49,7 @@ const Reviews = () => {
   })
 
   const { data: reviews, isLoading } = useQuery('reviews', () =>
-    fetch('http://localhost:8000/reviews', {
+    fetch('https://thawing-beach-36415.herokuapp.com/reviews', {
       method: "GET",
       // headers: {
       //   'authorization': `Bearer ${localStorage.getItem("accesstoken")}`
@@ -66,7 +66,7 @@ const Reviews = () => {
 
 
   // const { data:reviews , isLoading  } = useQuery('reviews', () =>
-  // fetch('http://localhost:8000/reviews')
+  // fetch('https://thawing-beach-36415.herokuapp.com/reviews')
   // .then(res =>
   //   res.json()
   // )
@@ -116,7 +116,7 @@ const Reviews = () => {
         >
 
           {
-           
+
 
             reviews?.map((review, index) => (
               <SwiperSlide key={index} >
