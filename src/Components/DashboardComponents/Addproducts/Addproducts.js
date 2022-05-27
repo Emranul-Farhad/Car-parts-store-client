@@ -78,7 +78,7 @@ const Addproducts = () => {
         <div className='flex justify-center mt-10'>
             <div class="card w-96 bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <h2 class="card-title">Card title!</h2>
+                    <h2 class="card-title">Add Products!</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <input

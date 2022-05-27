@@ -55,8 +55,8 @@ function App() {
         <Route path='/checkout/:id' element={ <Require> <Checkout></Checkout> </Require> } ></Route> 
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
         <Route path='users' element={<Users></Users>} ></Route>
-        <Route path='profile' element={<Profile></Profile>} ></Route>
-        <Route index element={<Myorders></Myorders>} ></Route>
+        <Route index element={<Profile></Profile>} ></Route>
+        <Route path='myorders' element={<Myorders></Myorders>} ></Route>
         <Route path='addreview' element={<Addreview></Addreview>} ></Route>
         <Route path='manage' element={<Manageorders></Manageorders>} ></Route>
         <Route path='addproducts' element={<Addproducts></Addproducts>} ></Route>

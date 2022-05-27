@@ -1,6 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+
 import { NavLink, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import auth from '../Fire key/Firekey';
@@ -8,6 +9,9 @@ import auth from '../Fire key/Firekey';
 
 
 const Myorders = () => {
+
+  
+
 
     const [user] = useAuthState(auth)
     const [orders, setOrders] = useState([])
@@ -50,6 +54,45 @@ const Myorders = () => {
 
 
 
+    const deletorder = id => {
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                const url = `http://localhost:8000/orderpro/${id}`
+                console.log(url, "delet");
+                fetch(url, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'deleted done',
+                                text: ` deleted products ${id}`
+                            })
+
+                        }  
+                        const deleted = orders.filter(delet => delet._id !== id )
+                        setOrders(deleted)
+                        console.log(data)
+                    })
+
+            }
+        })
+
+    }
+
+
 
     console.log(orders);
 
@@ -74,6 +117,7 @@ const Myorders = () => {
                                         <th class="text-center">#</th>
                                         <th>Email</th>
                                         <th class="text-center">products Name</th>
+                                        <th class="text-center">order cancel</th>
                                         <th class="text-center">Status</th>
 
                                     </tr>
@@ -102,12 +146,18 @@ const Myorders = () => {
                                                         </div>
                                                     </td>
                                                     <td class="text-center"> {order?.productname} </td>
+                                                    <td class="text-center">
+
+                                                       <button onClick={()=> deletorder(order?._id) } className='btn btn-primary btn-sm'> Cancel</button>
+                                         
+                                                    </td>
+
 
                                                     <td class="text-center">
                                                         <NavLink to={`/dashboard/payment/${order?._id}`} className="btn btn-primary btn-sm" >pay</NavLink>
-
-                                                        {/* <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Payment</button> */}
+                                         
                                                     </td>
+                                                    
                                                 </tr>
 
                                             </>

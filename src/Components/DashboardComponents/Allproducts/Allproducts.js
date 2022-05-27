@@ -88,6 +88,7 @@ const Allproducts = () => {
         })
 
     }
+    
     return (
         <div>
             <div class="row">
