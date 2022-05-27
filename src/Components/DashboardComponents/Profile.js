@@ -67,10 +67,13 @@ const Profile = () => {
                     {profiles?.names ? <h3 className='text-gray-500'>  {profiles?.names} </h3> :
                         <h3 className='text-gray-500'> {user?.displayName}  </h3>}
 
-                    <h6 className='text-gray-500'> {user?.email} </h6>
+                     <h6 className='text-gray-500'> {user?.email} </h6>
                     <p className='mt-3' alt={profiles?.bio} > Education : {profiles?.bio?.slice(0, 30) + ".."} </p>
-                    <p className='mt-3' alt={profiles?.location} > Location : {profiles?.location?.slice(0, 30) + ".."} </p>
-                    <p className='mt-3' alt={profiles?.phone} > number : {profiles?.phone?.slice(0, 11)} </p>
+
+                   { profiles?.location && <p className='mt-3' alt={profiles?.location} > Location : {profiles?.location?.slice(0, 30) + ".."} </p>}
+
+                 { profiles?.phone &&   <p className='mt-3' alt={profiles?.phone} > number : {profiles?.phone?.slice(0, 11)} </p>}
+
                     <div class="buttons mt-3">
                         <a href={profiles?.social} >
                             <button class="primary ghost">
@@ -82,7 +85,7 @@ const Profile = () => {
                     <div class="skills">
                         <h6>Skills</h6>
                         <ul>
-                            <li>UI / UX</li>
+                            {/* <li>UI / UX</li> */}
                             <li> {profiles?.bio} </li>
                             <li>{profiles?.skillo} </li>
                             <li> {profiles?.skillt} </li>
