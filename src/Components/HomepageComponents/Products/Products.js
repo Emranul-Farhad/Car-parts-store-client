@@ -10,16 +10,16 @@ const Products = () => {
     const [allproducts, setProducts] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:8000/products")
+        fetch("https://thawing-beach-36415.herokuapp.com/products")
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
 
     // navigate handel
-     const navigate = useNavigate()
+    const navigate = useNavigate()
 
-     const products = allproducts.slice(0,3)
-     console.log(products);
+    const products = allproducts.slice(0, 3)
+    console.log(products);
 
     return (
         <div>
@@ -35,7 +35,7 @@ const Products = () => {
                 }
             </div>
             <div>
-                <button onClick={()=> navigate('/products')} className='mt-[100px]'>See more..</button>
+                <button onClick={() => navigate('/products')} className='mt-[100px]'>See more..</button>
             </div>
         </div>
     );

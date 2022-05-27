@@ -1,4 +1,4 @@
-import { CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
 
@@ -10,7 +10,7 @@ const CheckoutForm = () => {
 
 
     // error handel hook
-     const [carderror , setCarderror] = useState("")
+    const [carderror, setCarderror] = useState("")
     //  client secret hook
     const [clientSecret, setClientSecret] = useState("");
 
@@ -21,25 +21,25 @@ const CheckoutForm = () => {
 
     // sendd money in stripe
     useEffect(() => {
-        fetch('http://localhost:8000/create-payment-intent', {
-          method: "POST",
-          headers: { 
-              "Content-Type": "application/json" 
+        fetch('https://thawing-beach-36415.herokuapp.com/create-payment-intent', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
             },
             // body: JSON.stringify ({}),your sitruc payment
         })
-          .then((res) => res.json())
-          .then(data => {  
-              console.log(data); 
-              if(data?.clientSecret){
-                //   console.log(data?.clientSecret, "aaaa" ) ;
-                  setClientSecret(data.clientSecret)
-              }    
-              else{
-                  console.log("failed");
-              }   
+            .then((res) => res.json())
+            .then(data => {
+                console.log(data);
+                if (data?.clientSecret) {
+                    //   console.log(data?.clientSecret, "aaaa" ) ;
+                    setClientSecret(data.clientSecret)
+                }
+                else {
+                    console.log("failed");
+                }
             });
-      }, []);
+    }, []);
 
 
 
@@ -57,13 +57,13 @@ const CheckoutForm = () => {
             return;
         }
 
-        const {error, paymentMethod} = await stripe.createPaymentMethod({
-            type: 'card', 
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+            type: 'card',
             card
-          });
-          
-          setCarderror(error?.message || "")
-          
+        });
+
+        setCarderror(error?.message || "")
+
     }
 
 
@@ -89,9 +89,9 @@ const CheckoutForm = () => {
                 />
                 <button className='mt-4 mr-[250px] btn bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100  font-semibold  shadow-lg cursor-pointer transition ease-in duration-500 border-0' type="submit" disabled={!stripe || !clientSecret}>
                     Pay
-                </button>   
+                </button>
             </form>
-            <p  className='text-red-600 font-bold mt-3' >  {carderror}  </p> 
+            <p className='text-red-600 font-bold mt-3' >  {carderror}  </p>
         </div>
     );
 };

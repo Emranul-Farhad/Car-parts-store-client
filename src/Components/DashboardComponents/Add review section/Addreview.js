@@ -11,7 +11,7 @@ const Addreview = () => {
 
     //    rating handel
     // const [value, setValue] = useState(5);
-    
+
     // console.log(value, "aa" );
 
     // submit handel
@@ -23,7 +23,7 @@ const Addreview = () => {
             from: data.from
         }
         console.log(review);
-        const url = "http://localhost:8000/reviews"
+        const url = "https://thawing-beach-36415.herokuapp.com/reviews"
         fetch(url, {
             method: "POST",
             headers: {
@@ -82,7 +82,7 @@ const Addreview = () => {
                             })}
                         />
                         <textarea {...register("qoute")} placeholder='descirbe your review' className='mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500' id="" cols="4" rows="4"></textarea>
-                        {/* rating add */}                       
+                        {/* rating add */}
 
                         <div class="card-actions justify-end">
                             <input class="btn bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100  font-semibold  shadow-lg cursor-pointer transition ease-in duration-500" type="submit" />

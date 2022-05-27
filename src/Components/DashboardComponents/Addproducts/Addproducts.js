@@ -13,15 +13,15 @@ const Addproducts = () => {
 
     //    handelo submit
     const onSubmit = data => {
-        const addpeoductsdetails ={
-            pname : data.pname,
+        const addpeoductsdetails = {
+            pname: data.pname,
             qunatity: data.qunatity,
-            minimumQuantity : data.minimumQuantity,
-            img : data.img,
-            price : data.price,
-            description : data.description
+            minimumQuantity: data.minimumQuantity,
+            img: data.img,
+            price: data.price,
+            description: data.description
         }
-        if(data.qunatity  < 0  || data.minimumQuantity <0 || data.price < 0  ){
+        if (data.qunatity < 0 || data.minimumQuantity < 0 || data.price < 0) {
             return (
                 Swal.fire({
                     icon: 'error',
@@ -31,7 +31,7 @@ const Addproducts = () => {
                 })
             )
         }
-        if(+data.qunatity < +data.minimumQuantity){
+        if (+data.qunatity < +data.minimumQuantity) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -39,38 +39,39 @@ const Addproducts = () => {
 
             })
         }
-        fetch("http://localhost:8000/addproducts", {
-            method: 'POST', 
-            headers: {                    
-                'Content-Type': 'application/json' ,            
+        fetch("https://thawing-beach-36415.herokuapp.com/addproducts", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(addpeoductsdetails),
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.insertedId){
-                return(
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'congrats..',
-                        text: 'adding products successfully',
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    return (
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'congrats..',
+                            text: 'adding products successfully',
 
-        
-                    })
-                ) 
-            }
-            else{
-                return(
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Check your quantity score',
-        
-                    })
-                )
-            }
-            console.log(data)})
-        console.log(data , addpeoductsdetails ,  "success get from here");
+
+                        })
+                    )
+                }
+                else {
+                    return (
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Check your quantity score',
+
+                        })
+                    )
+                }
+                console.log(data)
+            })
+        console.log(data, addpeoductsdetails, "success get from here");
     }
 
     return (

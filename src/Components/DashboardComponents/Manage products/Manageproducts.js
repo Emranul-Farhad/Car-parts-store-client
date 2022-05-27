@@ -8,7 +8,7 @@ import Loading from '../../Loading/Loading';
 const Manageorders = () => {
 
     const { data: orders, isLoading } = useQuery('orders', () =>
-        fetch('http://localhost:8000/allorders').then(res =>
+        fetch('https://thawing-beach-36415.herokuapp.com/allorders').then(res =>
             res.json()
         )
     )

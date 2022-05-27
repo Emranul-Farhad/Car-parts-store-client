@@ -25,7 +25,7 @@ import Addproducts from './Components/DashboardComponents/Addproducts/Addproduct
 import Allproducts from './Components/DashboardComponents/Allproducts/Allproducts';
 import Payment from './Components/DashboardComponents/Payment/Payment';
 import Checkout from './Components/Checkoutpages/Checkout';
-import Purchase from './Components/Purchase';
+import Purchase from './Components/Portfolio';
 
 
 
@@ -51,8 +51,6 @@ const [user, loading] = useAuthState(auth)
         <Route path='/signup' element={<Signup></Signup>} ></Route>
         <Route path='/products' element={<Allproductsshow></Allproductsshow>} ></Route>
         <Route path='/checkout/:id' element={ <Require> <Checkout></Checkout> </Require> } ></Route> 
-       <Route path='/tt' element={<Purchase></Purchase>} ></Route>
-
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
         <Route path='users' element={<Users></Users>} ></Route>
         <Route path='profile' element={<Profile></Profile>} ></Route>

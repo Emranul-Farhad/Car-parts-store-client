@@ -8,89 +8,89 @@ import Loading from '../../Loading/Loading';
 
 const Allproducts = () => {
 
-    const { data: products ,  isLoading, refetch } = useQuery('products', () =>
-    fetch('http://localhost:8000/products').then(res =>
-      res.json()
+    const { data: products, isLoading, refetch } = useQuery('products', () =>
+        fetch('https://thawing-beach-36415.herokuapp.com/products').then(res =>
+            res.json()
+        )
     )
-  )
 
-  if(isLoading){
-      return <Loading></Loading>
-  }
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
 
-//   deleting handel
-//    const delet = (id) => {
-//        const delet = Swal.fire({
-//         icon: 'question',
-//         title: 'are you sure ?',
-//         text: '',
-//     })
-//        if(delet){
-//         const url = `http://localhost:8000/products/${id}`
-//         console.log(url);
-//         fetch(url,{
-//             method : "DELETE"
-//         })
-//         .then(res=> res.json())
-//         .then(data => {
-//             if(data.deletedCount > 0 ){
-//                 Swal.fire({
-//                     icon: 'success',
-//                     title: 'deleted done',
-//                     text: ` deleted products ${id}` 
-//                 })
-               
-//             }
-//             refetch()
+    //   deleting handel
+    //    const delet = (id) => {
+    //        const delet = Swal.fire({
+    //         icon: 'question',
+    //         title: 'are you sure ?',
+    //         text: '',
+    //     })
+    //        if(delet){
+    //         const url = `https://thawing-beach-36415.herokuapp.com/products/${id}`
+    //         console.log(url);
+    //         fetch(url,{
+    //             method : "DELETE"
+    //         })
+    //         .then(res=> res.json())
+    //         .then(data => {
+    //             if(data.deletedCount > 0 ){
+    //                 Swal.fire({
+    //                     icon: 'success',
+    //                     title: 'deleted done',
+    //                     text: ` deleted products ${id}` 
+    //                 })
 
-//             console.log(data)
-//         })
-//        }
-     
+    //             }
+    //             refetch()
 
-//    }
+    //             console.log(data)
+    //         })
+    //        }
 
-const delet = id => {  
 
-   Swal.fire({
-    title: "Are you sure?",
-    text: "You won't be able to revert this!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Yes, delete it!",
-}).then((result) => {
-    if (result.isConfirmed) {
+    //    }
 
-        const url = `http://localhost:8000/products/${id}`
+    const delet = id => {
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                const url = `https://thawing-beach-36415.herokuapp.com/products/${id}`
                 console.log(url);
-                fetch(url,{
-                    method : "DELETE"
+                fetch(url, {
+                    method: "DELETE"
                 })
-                 .then(res=> res.json())
-                 .then(data => {
-                     if(data.deletedCount > 0 ){
-                       Swal.fire({
-                           icon: 'success',
-                            title: 'deleted done',
-                           text: ` deleted products ${id}` 
-                       })
-                       
-                    }
-                  refetch()
-        
-                   console.log(data)
-               })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'deleted done',
+                                text: ` deleted products ${id}`
+                            })
+
+                        }
+                        refetch()
+
+                        console.log(data)
+                    })
+
+            }
+        })
 
     }
-})
-
-}
     return (
         <div>
-             <div class="row">
+            <div class="row">
                 <div class="col-md-12">
                     <div class="main-card mb-3 card">
                         <div class="card-header"> Your Total products is {products.length}
@@ -139,8 +139,8 @@ const delet = id => {
                                                     <td class="text-center"> {product?._id} </td>
 
                                                     <td class="text-center">
-                                                        <button  
-                                                        onClick={() => delet(product?._id)} type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Delet</button>
+                                                        <button
+                                                            onClick={() => delet(product?._id)} type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Delet</button>
                                                     </td>
                                                 </tr>
 
