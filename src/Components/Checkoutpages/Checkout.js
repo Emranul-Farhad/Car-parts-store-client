@@ -46,9 +46,10 @@ const Checkout = () => {
             email: event.target.email.value,
             productname: event.target.productname.value,
             order: event.target.order.value,
-            totalprice: event.target.totalprice.value
+            totalprice: event.target.totalprice.value 
+
         }
-        console.log(event.target, event.target);
+        // console.log(event.target, event.target);
 
         fetch("https://thawing-beach-36415.herokuapp.com/orders", {
             method: 'POST',

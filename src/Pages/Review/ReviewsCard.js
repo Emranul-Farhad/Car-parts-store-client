@@ -1,9 +1,11 @@
+import { Rating } from '@mui/material';
 import React from 'react';
 import './Review.css'
 
 
 const ReviewsCard = ({review}) => {
-  const {qoute , img , from , name } = review
+  const {qoute , img , from , name , value} = review
+  
 
     return (
         <div>
@@ -22,6 +24,7 @@ const ReviewsCard = ({review}) => {
 
                             <h3 className='text-left mt-5'> Name : {name} </h3>
                             <h3 className='text-left '> From : {from} </h3>
+                            <Rating name="read-only" value={value} readOnly />
                         </div>
                     </div>
 

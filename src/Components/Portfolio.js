@@ -5,10 +5,11 @@ import React from 'react';
 
 const Portfolio = () => {
     return (
-        <div className='mt-20'>
+        <div className='mt-[100px]'>
             <div>
                 <h1 className='text-2xl font-bold text-slate-600'> Name  : Emranul Farhad </h1>
                 <p className='text-center'> (MernStack developer , Student) </p>
+                <h1 className='text-2xl font-bold text-slate-600 mb-2'> Email : emranulfarhad@gmail.comm </h1>
             </div>
             <div>
                 <h1 className='text-2xl font-bold text-slate-600'>Educational background :</h1>

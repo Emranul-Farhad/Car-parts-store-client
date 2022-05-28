@@ -1,4 +1,5 @@
 // import { Rating, Typography } from '@mui/material';
+import { Rating } from '@mui/material';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
@@ -11,7 +12,7 @@ const Addreview = () => {
 
 
     //    rating handel
-    // const [value, setValue] = useState(5);
+    const [value, setValue] = useState(5);
 
     // console.log(value, "aa" );
 
@@ -21,7 +22,8 @@ const Addreview = () => {
             qoute: data.qoute,
             name: data.name,
             img: data.img,
-            from: data.from
+            from: data.from,
+            value : value
         }
         console.log(review);
         const url = "https://thawing-beach-36415.herokuapp.com/reviews"
@@ -42,7 +44,7 @@ const Addreview = () => {
                 }
                 console.log(data)
             })
-        console.log(data);
+        console.log(data, review );
 
 
 
@@ -92,6 +94,13 @@ const Addreview = () => {
                         />
                         <textarea {...register("qoute")} placeholder='descirbe your review' className='mt-2 w-full text-base px-4 py-2 border border-[#E81938] focus:outline-none rounded-2xl focus:border-indigo-500' id="" cols="4" rows="4"></textarea>
                         {/* rating add */}
+                        <Rating
+        name="simple-controlled"
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      />
 
                         <div class="card-actions justify-end">
                             <input class="btn bg-gradient-to-r from-[#FC5A34] to-[#BB1D34]  hover:bg-gradient-to-l hover:from-[#FC5A34] hover:to-[#E81938]  text-gray-100  font-semibold  shadow-lg cursor-pointer transition ease-in duration-500" type="submit" />
@@ -106,3 +115,5 @@ const Addreview = () => {
 };
 
 export default Addreview;
+
+
