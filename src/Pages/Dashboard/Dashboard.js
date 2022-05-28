@@ -41,7 +41,7 @@ const Dashboard = () => {
 {/* 
                         <li><NavLink className="text-white font-bold uppercase" to='/dashboard/profile'> My Profile </NavLink> </li> */}
 
-                         <li><NavLink className="text-white font-bold uppercase" to='/dashboard/addreview'> Add a review </NavLink> </li>
+                        { !admin && <li><NavLink className="text-white font-bold uppercase" to='/dashboard/addreview'> Add a review </NavLink> </li>}
                     </ul>
 
                 </div>
